@@ -8,12 +8,19 @@ var min = 1,
     max = 20;
 
 // sort function
-function getRandomArbitrary(min, max) {
+function getRandomArbitrary(min, max) { 
   n = Math.random() * (max - min) + min;
   return parseInt(n, 10);
 }
 
-// show result
-var randomResult = getRandomArbitrary(min, max);
-console.log(randomResult);
+var i = 0;
+while (i < max){
+  // show result
+  var randomResult = getRandomArbitrary(min, max);
+  console.log(randomResult);
+  i++;
+}
+
+
+
 
