@@ -65,7 +65,10 @@ Creating paragraphs
     "quote40"
   ],
   paragraphs = [],
-  mIpsumStart = "Mussum Ipsum, cacilds vidis litro abertis. ";
+  pTagBegin = "<p>",
+  pTagEnd = "</p>",
+  hTagBegin = "<h1>",
+  hTagEnd = "</h1>";
 
   var quotesLength = quotes.length,
       max = quotesLength; //redefine max value
@@ -92,9 +95,24 @@ Creating paragraphs
 
   console.log(paragraphs);
 
-  // How many times u need to loop, this will be set by user
-  var turns = 10;
+/*
+Triggers
+----------------- >
+*/
+  // How many paragraphs u need ?, this will be set by user
+  var turns = 8;
+    // make sure that it will not call more tham 10 paragraphs
+    if (turns > 10) {
+      turns = 10;
+    };
 
+  var pTag = false,
+      hTag = false;
+
+/*
+Sorting paragraphs
+----------------- >
+*/
   for (var i = 0; i < turns; i++){
     var max = paragraphs.length; // Define the max number of paragraphs
     // sort function
@@ -102,12 +120,44 @@ Creating paragraphs
 
     // Insert the classic Mussum Ipsum start if it's the first paragraph
     if (i == 0 ) {
-      console.log(mIpsumStart + paragraphs[randomResult]);
+      var mIpsumStart = "Mussum Ipsum, cacilds vidis litro abertis. ";
     } else{
-      console.log(paragraphs[randomResult]); //print the selected value;    
+      var mIpsumStart = "";      
     };
+
+    if (pTag == true) {
+      toShow = pTagBegin + mIpsumStart + paragraphs[randomResult] + pTagEnd;
+    } else if (hTag == true){
+      toShow = hTagBegin + mIpsumStart + paragraphs[randomResult] + hTagEnd;
+    } else{
+      toShow = mIpsumStart + paragraphs[randomResult];
+    };
+
+    console.log(toShow); //print the selected value;    
 
     paragraphs.splice(randomResult, 1); //exlude the used value for the array
     max --; //decrease max getRandomNumber
   };
+
+/*
+Sorting products
+----------------- >
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
