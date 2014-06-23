@@ -8,16 +8,20 @@
 </head>
 <body>
 
-<input name="turns" type="number" value="1" step="1" min="0" max="10">
+<input id="turns" name="turns" type="number" value="1" step="1" min="0" max="10">
 
-<input list="browsers" placeholder="Escolhis">
-<datalist id="browsers">
-  <option value="Paragrafis">
-  <option value="<h1>">
-  <option value="<p>">
-  <option value="Mé!">
-</datalist>
-<button type="button">Manda vê compadis!</button>
+<form>
+	<input list="kind" placeholder="Escolhis">
+	<datalist id="kind">
+	  <option value="Paragrafis">
+	  <option value="<h1>">
+	  <option value="<p>">
+	  <option value="Mé!">
+	</datalist>
+	<button type="button" onClick="sortParagraphs()">Manda vê compadis!</button>
+</form>
+
+<div id="result"></div>
 
 </body>
 </html>

@@ -99,12 +99,18 @@ Creating paragraphs
 Triggers
 ----------------- >
 */
-  // How many paragraphs u need ?, this will be set by user
-  var turns = 8;
-    // make sure that it will not call more tham 10 paragraphs
-    if (turns > 10) {
-      turns = 10;
-    };
+  // var turnsBt = document.getElementById('turns');
+  // turnsBt.click(console.log('click!'));
+
+  // function triggers(){
+  //   var turns = document.getElementById('turns').value;
+  //   console.log(turns);
+  //   sortParagraphs();
+  //   var kind = document.getElementById('turns').value;
+  //   console.log(turns);
+  // };
+
+
 
   var pTag = false,
       hTag = false;
@@ -113,32 +119,46 @@ Triggers
 Sorting paragraphs
 ----------------- >
 */
-  for (var i = 0; i < turns; i++){
-    var max = paragraphs.length; // Define the max number of paragraphs
-    // sort function
-    var randomResult = getRandomNumber(min, max);
+  function sortParagraphs(){
+    var turns = document.getElementById('turns').value;
+    console.log(turns);
+    // How many paragraphs u need ?, this will be set by user
+    // var turns = 8;
+      // make sure that it will not call more tham 10 paragraphs
+        if (turns > 10) {
+          turns = 10;
+        };
 
-    // Insert the classic Mussum Ipsum start if it's the first paragraph
-    if (i == 0 ) {
-      var mIpsumStart = "Mussum Ipsum, cacilds vidis litro abertis. ";
-    } else{
-      var mIpsumStart = "";      
+    for (var i = 0, result = ""; i < turns; i++){
+      var max = paragraphs.length; // Define the max number of paragraphs
+      // sort function
+      var randomResult = getRandomNumber(min, max);
+
+      // Insert the classic Mussum Ipsum start if it's the first paragraph
+      if (i == 0 ) {
+        var mIpsumStart = "Mussum Ipsum, cacilds vidis litro abertis. ";
+      } else{
+        var mIpsumStart = "";      
+      };
+
+      if (pTag == true) {
+        toShow = pTagBegin + mIpsumStart + paragraphs[randomResult] + pTagEnd;
+      } else if (hTag == true){
+        toShow = hTagBegin + mIpsumStart + paragraphs[randomResult] + hTagEnd;
+      } else{
+        toShow = mIpsumStart + paragraphs[randomResult];
+      };
+
+      console.log(toShow); 
+
+      result += toShow;
+      console.log(toShow); 
+
+      paragraphs.splice(randomResult, 1); //exlude the used value for the array
+      max --; //decrease max getRandomNumber
     };
-
-    if (pTag == true) {
-      toShow = pTagBegin + mIpsumStart + paragraphs[randomResult] + pTagEnd;
-    } else if (hTag == true){
-      toShow = hTagBegin + mIpsumStart + paragraphs[randomResult] + hTagEnd;
-    } else{
-      toShow = mIpsumStart + paragraphs[randomResult];
-    };
-
-    console.log(toShow); //print the selected value;    
-
-    paragraphs.splice(randomResult, 1); //exlude the used value for the array
-    max --; //decrease max getRandomNumber
+    document.getElementById("result").innerHTML=result;
   };
-
 /*
 Sorting products
 ----------------- >
