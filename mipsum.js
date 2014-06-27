@@ -111,19 +111,12 @@ Sorting paragraphs
       // sort function
       var randomResult = getRandomNumber(min, max);
 
-      // Insert the classic Mussum Ipsum start if it's the first paragraph
-      if (i == 0 ) {
-        var mIpsumStart = "Mussum Ipsum, cacilds vidis litro abertis. ";
-      } else{
-        var mIpsumStart = "";      
-      };
-
       if (pTag == true) {
-        toShow = pTagBegin + mIpsumStart + paragraphs[randomResult] + pTagEnd;
+        toShow = pTagBegin + paragraphs[randomResult] + pTagEnd;
       } else if (hTag == true){
-        toShow = hTagBegin + mIpsumStart + paragraphs[randomResult] + hTagEnd;
+        toShow = hTagBegin + paragraphs[randomResult] + hTagEnd;
       } else{
-        toShow = mIpsumStart + paragraphs[randomResult];
+        toShow = paragraphs[randomResult];
       }; 
 
       window.result += toShow;
@@ -134,8 +127,11 @@ Sorting paragraphs
   };
 
   function showResult(){
+    // Insert the classic Mussum Ipsum start if it's the first paragraph
+    var mIpsumStart = "Mussum Ipsum, cacilds vidis litro abertis. ";
+
     console.log(result);
-    document.getElementById("result").innerHTML=window.result;
+    document.getElementById("result").innerHTML=mIpsumStart+window.result;
   };
 /*
 Triggres
@@ -146,29 +142,29 @@ Triggres
     hTag = false;
 
     // How many paragraphs u need ?, this will be set by user
-    var turns = document.getElementById('turns').value;
-    // turns = 2;
+    window.turns = document.getElementById('turns').value;
+    // window.turns = 200;
 
-    // console.log('turns = ' + turns);
+    // console.log('window.turns = ' + window.turns);
       // make sure that it will not call more tham 10 paragraphs
-    if (turns < 10) {
-      console.log('turns = ' + turns);
-      window.laps = turns;
+    if (window.turns < 10) {
+      console.log('window.turns = ' + window.turns);
+      window.laps = window.turns;
       creatingParagraphs();
       console.log('criou menos de 10 paragrafos e guardou na variavel');
       console.log('Imprime a variavel');     
       showResult();
     } else{
-      for( ;turns >10; ){
+      for( ;window.turns >10; ){
         window.laps = 10;
-        console.log('turns = ' + turns);
+        console.log('window.turns = ' + window.turns);
         creatingParagraphs();
         console.log('criou 10 paragrafos e guardou na variavel');
-        turns -= 10;
-        console.log('turns = ' + turns);
-        if (turns < 10) {
-          window.laps = turns;
-          console.log('turns = ' + turns);
+        window.turns -= 10;
+        console.log('window.turns = ' + window.turns);
+        if (window.turns < 10) {
+          window.laps = window.turns;
+          console.log('window.turns = ' + window.turns);
           console.log('criou menos de 10 paragrafos e guardou na variavel');
           creatingParagraphs();
           console.log('Imprime a variavel');            
@@ -180,15 +176,15 @@ Triggres
   };
 
 
-// var turnsBt = document.getElementById('turns');
-// turnsBt.click(console.log('click!'));
+// var window.turnsBt = document.getElementById('window.turns');
+// window.turnsBt.click(console.log('click!'));
 
 // function triggers(){
-//   var turns = document.getElementById('turns').value;
-//   console.log(turns);
+//   var window.turns = document.getElementById('window.turns').value;
+//   console.log(window.turns);
 //   sortParagraphs();
-//   var kind = document.getElementById('turns').value;
-//   console.log(turns);
+//   var kind = document.getElementById('window.turns').value;
+//   console.log(window.turns);
 // };
 
 
