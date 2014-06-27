@@ -89,6 +89,7 @@ Creating paragraphs
 
         if (i==3) {
           // Push the the tem string to the paragraphs array
+          tempParagraph += "\n" ; // append the quote on a temp string
           paragraphs.push(tempParagraph);
           break;
         };
@@ -104,32 +105,6 @@ Sorting paragraphs
 ----------------- >
 */
   function sortParagraphs(){
-    /*
-    Triggers
-    ----------------- >
-    */
-      // var turnsBt = document.getElementById('turns');
-      // turnsBt.click(console.log('click!'));
-
-      // function triggers(){
-      //   var turns = document.getElementById('turns').value;
-      //   console.log(turns);
-      //   sortParagraphs();
-      //   var kind = document.getElementById('turns').value;
-      //   console.log(turns);
-      // };
-      var pTag = false,
-          hTag = false;
-
-    var turns = document.getElementById('turns').value;
-    console.log(turns);
-    // How many paragraphs u need ?, this will be set by user
-    // var turns = 8;
-      // make sure that it will not call more tham 10 paragraphs
-        if (turns > 10) {
-          turns = 10;
-        };
-
     for (var i = 0, result = ""; i < turns; i++){
       var max = paragraphs.length; // Define the max number of paragraphs
       // sort function
@@ -148,9 +123,7 @@ Sorting paragraphs
         toShow = hTagBegin + mIpsumStart + paragraphs[randomResult] + hTagEnd;
       } else{
         toShow = mIpsumStart + paragraphs[randomResult];
-      };
-
-      console.log(toShow); 
+      }; 
 
       result += toShow;
       console.log(toShow); 
@@ -160,12 +133,39 @@ Sorting paragraphs
     };
     document.getElementById("result").innerHTML=result;
   };
+
 /*
-Sorting products
+Triggres
 ----------------- >
 */
+  function mIpsumTrigger(){
+    pTag = false,
+    hTag = false;
+
+    // How many paragraphs u need ?, this will be set by user
+    // var turns = document.getElementById('turns').value;
+    turns = 12;
+
+    console.log('turns = ' + turns);
+      // make sure that it will not call more tham 10 paragraphs
+      if (turns > 10) {
+        turns = 10;
+      };
+    console.log('turns = ' + turns);
+    creatingParagraphs();
+  };
 
 
+// var turnsBt = document.getElementById('turns');
+// turnsBt.click(console.log('click!'));
+
+// function triggers(){
+//   var turns = document.getElementById('turns').value;
+//   console.log(turns);
+//   sortParagraphs();
+//   var kind = document.getElementById('turns').value;
+//   console.log(turns);
+// };
 
 
 
