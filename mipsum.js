@@ -105,7 +105,8 @@ Sorting paragraphs
 ----------------- >
 */
   function sortParagraphs(){
-    for (var i = 0, result = ""; i < turns; i++){
+    console.log('laps = ' + window.laps);
+    for (var i = 0, result = ""; i < window.laps; i++){
       var max = paragraphs.length; // Define the max number of paragraphs
       // sort function
       var randomResult = getRandomNumber(min, max);
@@ -125,15 +126,17 @@ Sorting paragraphs
         toShow = mIpsumStart + paragraphs[randomResult];
       }; 
 
-      result += toShow;
-      console.log(toShow); 
+      window.result += toShow;
 
       paragraphs.splice(randomResult, 1); //exlude the used value for the array
       max --; //decrease max getRandomNumber
     };
-    document.getElementById("result").innerHTML=result;
   };
 
+  function showResult(){
+    console.log(result);
+    document.getElementById("result").innerHTML=window.result;
+  };
 /*
 Triggres
 ----------------- >
@@ -143,16 +146,37 @@ Triggres
     hTag = false;
 
     // How many paragraphs u need ?, this will be set by user
-    // var turns = document.getElementById('turns').value;
-    turns = 12;
+    var turns = document.getElementById('turns').value;
+    // turns = 2;
 
-    console.log('turns = ' + turns);
+    // console.log('turns = ' + turns);
       // make sure that it will not call more tham 10 paragraphs
-      if (turns > 10) {
-        turns = 10;
+    if (turns < 10) {
+      console.log('turns = ' + turns);
+      window.laps = turns;
+      creatingParagraphs();
+      console.log('criou menos de 10 paragrafos e guardou na variavel');
+      console.log('Imprime a variavel');     
+      showResult();
+    } else{
+      for( ;turns >10; ){
+        window.laps = 10;
+        console.log('turns = ' + turns);
+        creatingParagraphs();
+        console.log('criou 10 paragrafos e guardou na variavel');
+        turns -= 10;
+        console.log('turns = ' + turns);
+        if (turns < 10) {
+          window.laps = turns;
+          console.log('turns = ' + turns);
+          console.log('criou menos de 10 paragrafos e guardou na variavel');
+          creatingParagraphs();
+          console.log('Imprime a variavel');            
+          showResult();
+        };
       };
-    console.log('turns = ' + turns);
-    creatingParagraphs();
+    };
+    // creatingParagraphs();
   };
 
 
