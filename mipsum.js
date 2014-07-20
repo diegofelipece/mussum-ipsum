@@ -64,11 +64,7 @@ Creating paragraphs
       "quote38",
       "quote39",
       "quote40"
-    ],
-    pTagBegin = "<p>",
-    pTagEnd = "</p>",
-    hTagBegin = "<h1>",
-    hTagEnd = "</h1>";
+    ];
 
     window.paragraphs = [];
 
@@ -111,7 +107,12 @@ Sorting paragraphs
       // sort function
       var randomResult = getRandomNumber(min, max);
 
-      if (pTag == true) {
+      var pTagBegin = "<p>",
+      pTagEnd = "</p>",
+      hTagBegin = "<h1>",
+      hTagEnd = "</h1>";
+
+      if (window.pTag == true) {
         toShow = pTagBegin + paragraphs[randomResult] + pTagEnd;
       } else if (hTag == true){
         toShow = hTagBegin + paragraphs[randomResult] + hTagEnd;
@@ -131,14 +132,14 @@ Sorting paragraphs
     var mIpsumStart = "Mussum Ipsum, cacilds vidis litro abertis. ";
 
     console.log(result);
-    document.getElementById("result").innerHTML=mIpsumStart+window.result;
+    document.getElementById("result").innerHTML = mIpsumStart+window.result;
   };
 /*
 Triggres
 ----------------- >
 */
   function mIpsumTrigger(){
-    pTag = false,
+    window.pTag = false,
     hTag = false;
 
     // How many paragraphs u need ?, this will be set by user
@@ -172,9 +173,7 @@ Triggres
         };
       };
     };
-    // creatingParagraphs();
   };
-
 
 // var window.turnsBt = document.getElementById('window.turns');
 // window.turnsBt.click(console.log('click!'));
