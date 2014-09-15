@@ -23,21 +23,36 @@ Creating paragraphs
 */
   function creatingParagraphs() {
     // Define quotes
+
     var quotes = [
       "quote1",
+      // "Pra lá , depois divoltis porris, paradis. ",
       "quote2",
+      // "Paisis, filhis, espiritis santis. ",
       "quote3",
+      // "Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. ",
       "quote4",
+      // "Manduma pindureta quium dia nois paga. ",
       "quote5",
+      // "Sapien in monti palavris qui num significa nadis i pareci latim. ",
       "quote6",
+      // "Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.",
       "quote7",
+      // "Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis. ",
       "quote8",
+      // "Interagi no mé, cursus quis, vehicula ac nisi. ",
       "quote9",
+      // "Casamentiss faiz malandris se pirulitá.",
       "quote10",
+      // "Cevadis im ampola pa arma uma pindureta. ",
       "quote11",
+      // "Atirei o pau no gatis. ",
       "quote12",
+      // "Viva Forevis aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. ",
       "quote13",
+      // "Copo furadis é disculpa de bebadis, arcu quam euismod magna, bibendum egestas augue arcu ut est. ",
       "quote14",
+      // "Delegadis gente finis. ",
       "quote15",
       "quote16",
       "quote17",
@@ -85,7 +100,7 @@ Creating paragraphs
 
         if (i==3) {
           // Push the the tem string to the paragraphs array
-          tempParagraph += "\n" ; // append the quote on a temp string
+          // tempParagraph += "\n" ; // append the quote on a temp string
           paragraphs.push(tempParagraph);
           break;
         };
@@ -93,13 +108,15 @@ Creating paragraphs
     };
 
     console.log(paragraphs);
-    sortParagraphs();
+    sortParagraphs();    
   };
 
 /*
 Sorting paragraphs
 ----------------- >
 */
+
+
   function sortParagraphs(){
     console.log('laps = ' + window.laps);
     for (var i = 0, result = ""; i < window.laps; i++){
@@ -117,10 +134,10 @@ Sorting paragraphs
       } else if (hTag == true){
         toShow = hTagBegin + paragraphs[randomResult] + hTagEnd;
       } else{
-        toShow = paragraphs[randomResult];
-      }; 
+        toShow = "<p>" + paragraphs[randomResult] + "<p>";
+      };
 
-      window.result += toShow;
+      window.preResult += toShow;
 
       paragraphs.splice(randomResult, 1); //exlude the used value for the array
       max --; //decrease max getRandomNumber
@@ -129,10 +146,17 @@ Sorting paragraphs
 
   function showResult(){
     // Insert the classic Mussum Ipsum start if it's the first paragraph
-    var mIpsumStart = "Mussum Ipsum, cacilds vidis litro abertis. ";
+    var divResult = document.getElementById("result");
+    var mIpsumStart = "<p>Mussum Ipsum, cacilds vidis litro abertis. </p>";
+    window.result = mIpsumStart + window.preResult;
+    // if (txtNome == "") {
+    //     divResultado.innerHTML = "Preencha o campo com seu nome.";
+    //     senddata.txtNome.focus();
+    //     return false;
+    // }
 
     console.log(result);
-    document.getElementById("result").innerHTML = mIpsumStart+window.result;
+    divResult.innerHTML = window.result;
   };
 /*
 Triggres
@@ -143,9 +167,10 @@ Triggres
     hTag = false;
 
     // How many paragraphs u need ?, this will be set by user
-    window.turns = document.getElementById('turns').value;
+    // nTurns = document.getElementById('turns').value;
+    // window.turns = Math.round(nTurns);
     // window.turns = 200;
-
+    window.turns = encodeURI(document.getElementById('turns').value);
     // console.log('window.turns = ' + window.turns);
       // make sure that it will not call more tham 10 paragraphs
     if (window.turns < 10) {
@@ -156,7 +181,7 @@ Triggres
       console.log('Imprime a variavel');     
       showResult();
     } else{
-      for( ;window.turns >10; ){
+      for( ;window.turns > 10; ){
         window.laps = 10;
         console.log('window.turns = ' + window.turns);
         creatingParagraphs();
@@ -172,7 +197,7 @@ Triggres
           showResult();
         };
       };
-    };
+    }
   };
 
 // var window.turnsBt = document.getElementById('window.turns');
