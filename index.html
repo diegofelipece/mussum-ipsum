@@ -7,9 +7,8 @@
 </head>
 <body>
 
-<input id="turns" name="turns" type="number" value="1" step="1" min="0" max="2000">
-
 <form>
+	<input id="turns" name="turns" type="number" value="1" minlength="1" maxlength="2000">
 	<input list="kind" placeholder="Escolhis">
 	<datalist id="kind">
 	  <option value="Paragrafis">
@@ -17,7 +16,7 @@
 	  <option value="<p>">
 	  <option value="Mé!">
 	</datalist>
-	<button type="button" onClick="mIpsumTrigger()">Manda vê compadis!</button>
+	<button type="button" id="mIpsumTrigger">Manda vê compadis!</button>
 </form>
 
 <div id="result"></div>
