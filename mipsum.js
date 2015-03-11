@@ -7,8 +7,6 @@ Proudly made for mussumipsum.com by Diego Esteves
 
 (function(window, document, undefined){
 
-// code that should be taken care of right away
-
 window.onload = init;
 
   function init(){
@@ -217,6 +215,8 @@ window.onload = init;
 
       mIpsumTrigger();
     });
+
+
 
   }
 
