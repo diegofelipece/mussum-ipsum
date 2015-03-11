@@ -90,6 +90,7 @@ window.onload = init;
         ];
 
         window.paragraphs = [];
+        window.preResult = "";
 
         var quotesLength = quotes.length,
             max = quotesLength; //redefine max value
@@ -168,8 +169,9 @@ window.onload = init;
         };
         var divResult = document.getElementById('result');
 
-        // Insert the classic Mussum Ipsum start if it's the first paragraph
-        window.result = window.preResult;
+        var result = window.preResult; //transfer global data to local
+        window.preResult = "";
+
         // if (txtNome == "") {
         //     divResultado.innerHTML = "Preencha o campo com seu nome.";
         //     senddata.txtNome.focus();
@@ -177,7 +179,7 @@ window.onload = init;
         // }
 
         console.log(result);
-        divResult.innerHTML = '<div id="teste">' + window.result + '</div>';
+        // divResult.innerHTML = '<div id="teste">' + result + '</div>';
       };
     /*
     Triggres
