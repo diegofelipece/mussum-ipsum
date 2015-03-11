@@ -116,7 +116,7 @@ window.onload = init;
           };
         };
 
-        console.log(paragraphs);
+        // console.log(paragraphs);
         sortParagraphs();    
       };
 
@@ -125,7 +125,7 @@ window.onload = init;
     ----------------- >
     */
       function sortParagraphs(){
-        console.log('laps = ' + window.laps);
+        // console.log('laps = ' + window.laps);
         for (var i = 0, result = "", mIpsumStartCount = 0; i < window.laps; i++){
           var max = paragraphs.length; // Define the max number of paragraphs
           // sort function
@@ -163,23 +163,13 @@ window.onload = init;
 
 
       function showResult(){
-
-        if (document.getElementById('teste') !== null) {
-          console.log('not null');
-        };
         var divResult = document.getElementById('result');
 
         var result = window.preResult; //transfer global data to local
         window.preResult = "";
 
-        // if (txtNome == "") {
-        //     divResultado.innerHTML = "Preencha o campo com seu nome.";
-        //     senddata.txtNome.focus();
-        //     return false;
-        // }
-
-        console.log(result);
-        // divResult.innerHTML = '<div id="teste">' + result + '</div>';
+        // console.log(result);
+        divResult.innerHTML = result;
       };
     /*
     Triggres
@@ -189,36 +179,30 @@ window.onload = init;
         window.pTag = false,
         window.hTag = false;
 
-        // How many paragraphs u need ?, this will be set by user
-        // nTurns = document.getElementById('turns').value;
-        // window.turns = Math.round(nTurns);
-        // window.turns = 200;
-
         window.turns = encodeURI(document.getElementById('turns').value);
 
-        // console.log('window.turns = ' + window.turns);
 
         if (window.turns < 10) {
-          console.log('window.turns = ' + window.turns);
+          // console.log('window.turns = ' + window.turns);
           window.laps = window.turns;
           creatingParagraphs();
-          console.log('criou menos de 10 paragrafos e guardou na variavel');
-          console.log('Imprime a variavel');     
+          // console.log('criou menos de 10 paragrafos e guardou na variavel');
+          // console.log('Imprime a variavel');     
           showResult();
         } else{
           for( ;window.turns > 10; ){
             window.laps = 10;
-            console.log('window.turns = ' + window.turns);
+            // console.log('window.turns = ' + window.turns);
             creatingParagraphs();
-            console.log('criou 10 paragrafos e guardou na variavel');
+            // console.log('criou 10 paragrafos e guardou na variavel');
             window.turns -= 10;
-            console.log('window.turns = ' + window.turns);
+            // console.log('window.turns = ' + window.turns);
             if (window.turns < 10) {
               window.laps = window.turns;
-              console.log('window.turns = ' + window.turns);
-              console.log('criou menos de 10 paragrafos e guardou na variavel');
+              // console.log('window.turns = ' + window.turns);
+              // console.log('criou menos de 10 paragrafos e guardou na variavel');
               creatingParagraphs();
-              console.log('Imprime a variavel');            
+              // console.log('Imprime a variavel');            
               showResult();
             };
           };
@@ -231,20 +215,8 @@ window.onload = init;
     theTrigger.addEventListener("click", function(event){
       event.preventDefault(); 
 
-      console.log('olar');
-
       mIpsumTrigger();
     });
-
-    //trigger.click(console.log('click!'));
-
-    // function triggers(){
-    //   var window.turns = document.getElementById('window.turns').value;
-    //   console.log(window.turns);
-    //   sortParagraphs();
-    //   var kind = document.getElementById('window.turns').value;
-    //   console.log(window.turns);
-    // };
 
   }
 
