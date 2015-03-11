@@ -163,6 +163,9 @@ window.onload = init;
 
       function showResult(){
 
+        if (document.getElementById('teste') !== null) {
+          console.log('not null');
+        };
         var divResult = document.getElementById('result');
 
         // Insert the classic Mussum Ipsum start if it's the first paragraph
@@ -174,7 +177,7 @@ window.onload = init;
         // }
 
         console.log(result);
-        divResult.innerHTML = window.result;
+        divResult.innerHTML = '<div id="teste">' + window.result + '</div>';
       };
     /*
     Triggres
