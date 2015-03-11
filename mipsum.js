@@ -125,22 +125,32 @@ window.onload = init;
     */
       function sortParagraphs(){
         console.log('laps = ' + window.laps);
-        for (var i = 0, result = ""; i < window.laps; i++){
+        for (var i = 0, result = "", mIpsumStartCount = 0; i < window.laps; i++){
           var max = paragraphs.length; // Define the max number of paragraphs
           // sort function
           var randomResult = getRandomNumber(min, max);
 
           var pTagBegin = "<p>",
-          pTagEnd = "</p>",
-          hTagBegin = "<h1>",
-          hTagEnd = "</h1>";
+              pTagEnd = "</p>",
+              hTagBegin = "<h1>",
+              hTagEnd = "</h1>";
 
+ 
           if (window.pTag == true) {
             toShow = pTagBegin + paragraphs[randomResult] + pTagEnd;
           } else if (window.hTag == true){
             toShow = hTagBegin + paragraphs[randomResult] + hTagEnd;
           } else{
-            toShow = "<p>" + paragraphs[randomResult] + "<p>";
+
+            // Insert Mussum Ipsum only at the first paragraph
+            if (mIpsumStartCount == 0) {
+              var mIpsumStart = "Mussum Ipsum, cacilds vidis litro abertis. ";
+              mIpsumStartCount ++;
+            } else{
+              var mIpsumStart = "";
+            };
+
+            toShow = "<p>" + mIpsumStart + paragraphs[randomResult] + "<p>";
           };
 
           window.preResult += toShow;
@@ -156,8 +166,7 @@ window.onload = init;
         var divResult = document.getElementById('result');
 
         // Insert the classic Mussum Ipsum start if it's the first paragraph
-        var mIpsumStart = "<p>Mussum Ipsum, cacilds vidis litro abertis. </p>";
-        window.result = mIpsumStart + window.preResult;
+        window.result = window.preResult;
         // if (txtNome == "") {
         //     divResultado.innerHTML = "Preencha o campo com seu nome.";
         //     senddata.txtNome.focus();
@@ -179,7 +188,9 @@ window.onload = init;
         // nTurns = document.getElementById('turns').value;
         // window.turns = Math.round(nTurns);
         // window.turns = 200;
+
         window.turns = encodeURI(document.getElementById('turns').value);
+
         // console.log('window.turns = ' + window.turns);
 
         if (window.turns < 10) {
