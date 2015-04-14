@@ -118,9 +118,10 @@ Proudly made for mussumipsum.com by Diego Esteves
   ----------------- >
   */
     window.preResult = "";
+    window.mIpsumStartCount = 0;
     function sortParagraphs(){
       // console.log('laps = ' + window.laps);
-      for (var i = 0, result = "", mIpsumStartCount = 0; i < window.laps; i++){
+      for (var i = 0, result = ""; i < window.laps; i++){
         var max = paragraphs.length; // Define the max number of paragraphs
         // sort function
         var randomResult = getRandomNumber(min, max);
@@ -138,9 +139,9 @@ Proudly made for mussumipsum.com by Diego Esteves
         } else{
 
           // Insert Mussum Ipsum only at the first paragraph
-          if (mIpsumStartCount == 0) {
+          if (window.mIpsumStartCount == 0) {
             var mIpsumStart = "Mussum Ipsum, cacilds vidis litro abertis. ";
-            mIpsumStartCount ++;
+            window.mIpsumStartCount ++;
           } else{
             var mIpsumStart = "";
           };
@@ -165,6 +166,9 @@ Proudly made for mussumipsum.com by Diego Esteves
 
       // console.log(result);
       divResult.innerHTML = result;
+
+      // reset "mIpsumStartCount"
+      window.mIpsumStartCount = 0;      
     };
   /*
   Triggres
