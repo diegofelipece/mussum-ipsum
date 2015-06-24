@@ -7,13 +7,7 @@ var app = (function(document, $) {
 		},
 		_init = function() {
 			$(document).foundation();
-            // needed to use joyride
-            // doc: http://foundation.zurb.com/docs/components/joyride.html
-            $(document).on('click', '#start-jr', function () {
-                $(document).foundation('joyride', 'start');
-            });
-			_userAgentInit();
-
+			
 		    // mIpsum -> set the function of trigger call
 			$('#mIpsumTrigger').on('click', function(event) {
 				event.preventDefault();
@@ -26,6 +20,7 @@ var app = (function(document, $) {
 				mIpsumTrigger(turns, pTagSet, hTagSet);
 			});
 
+			_userAgentInit();
 		};
 	return {
 		init: _init

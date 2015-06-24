@@ -1,56 +1,69 @@
 <!doctype html>
 <html class="no-js" lang="pt" >
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="apple-touch-icon" sizes="57x57" href="images/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="images/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="images/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="images/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="images/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="images/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="images/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+        <!--     <link rel="apple-touch-icon" sizes="57x57" href="images/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="images/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="images/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="images/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="images/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="images/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="images/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="images/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+        -->
+        <title>Mussum Ipsum - O melhor lorem ipsum do mundis</title>
+        <!-- build:css css/libraries.min.css -->
+        <!-- bower:css -->
+        <!-- endbower -->
+        <!-- endbuild -->
+        <!-- build:css css/app.min.css -->
+        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" href="css/app_override.css">
+        <!-- endbuild -->
+        <!-- build:js js/vendor/modernizr.min.js -->
+        <script src="bower_components/modernizr/modernizr.js"></script>
+        <!-- endbuild -->
+    </head>
+    <body>
 
-    <title>Mussum Ipsum</title>
-    <!-- build:css css/libraries.min.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css css/app.min.css -->
-    <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="css/app_override.css">
-    <!-- endbuild -->
-    <!-- build:js js/vendor/modernizr.min.js -->
-    <script src="bower_components/modernizr/modernizr.js"></script>
-    <!-- endbuild -->
-  </head>
-  <body>
 
-    <div class="row">
-      <div class="small-12 small-centered medium-10 medium-centered columns">
+    <header id="header" class="panel small-12">Header</header>
+    <div id="main-content" class="panel small-12">
+        Main content
+<div class="row">
+    <div class="small-12">
         <form>
             <h1>Mussum Ipsum</h1>
             <label for="turns">
-                <small>Preciso de</small>
-                <input id="turns" name="turns" type="number" value="1" minlength="1" maxlength="20" pattern="([20])\w+">
-                <small>parágrafo(s).</small>
+            <small>Preciso de</small>
+            <input id="turns" name="turns" type="number" value="1" minlength="1" maxlength="20" pattern="([20])\w+">
+            <small>parágrafo(s).</small>
             </label>
             <button type="submit" id="mIpsumTrigger"></button>
         </form>
-        <div id="result">
-        </div>
-      </div>
+    <div id="result"></div>
     </div>
+</div>
+
+
+    </div>
+    <div class="add-space" class="panel small-12">add</div>
+    <div id="bizolhadis" class="panel small-12">bizolhadis</div>
+    <div class="add-space" class="panel small-12">add</div>
+    <div id="midis" class="panel small-12">midis</div>
+    <footer id="footer" class="panel small-12">footer</footer>
+
+    <div id="menu"></div>
 
     <!-- build:js js/vendor/libraries.min.js -->
     <!-- bower:js -->
