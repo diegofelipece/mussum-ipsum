@@ -1,1 +1,34 @@
-/* all app scss styles here */
+#header{
+	height: 100%;
+	background-color: $gray;
+}
+
+#main-content{
+	height: 300px;
+	background-color: $black;
+}
+
+#bizolhadis{
+	height: 300px;
+	background-color: $primary-color;
+}
+
+#midis{
+	height: 300px;
+	background-color: $black;
+}
+
+#footer{
+	height: 300px;
+	background-color: $gray;
+}
+
+#menu{
+	height: 300px;
+	background-color: $gray;
+}
+
+.ad-space{
+	height: rem-calc(140);
+	background-color: $gray;
+}
