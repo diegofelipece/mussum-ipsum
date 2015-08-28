@@ -5134,7 +5134,7 @@ p {
 
 /* Default header styles */
 h1, h2, h3, h4, h5, h6 {
-  color: #222222;
+  color: #FFFFFF;
   font-family: 'Glegoo', serif;
   font-style: normal;
   font-weight: normal;
@@ -5143,7 +5143,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0.2rem;
   text-rendering: optimizeLegibility; }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
-    color: #6f6f6f;
+    color: white;
     font-size: 60%;
     line-height: 0; }
 
@@ -5167,7 +5167,7 @@ h6 {
 
 .subheader {
   line-height: 1.4;
-  color: #6f6f6f;
+  color: white;
   font-weight: normal;
   margin-top: 0.2rem;
   margin-bottom: 0.5rem; }
@@ -5271,15 +5271,15 @@ blockquote {
   blockquote cite {
     display: block;
     font-size: 0.8125rem;
-    color: #555555; }
+    color: white; }
     blockquote cite:before {
       content: "\2014 \0020"; }
     blockquote cite a, blockquote cite a:visited {
-      color: #555555; }
+      color: white; }
 
 blockquote, blockquote p {
   line-height: 1.6;
-  color: #6f6f6f; }
+  color: white; }
 
 /* Microformats */
 .vcard {
@@ -6102,7 +6102,7 @@ th.hide-for-touch {
 
 #header {
   height: 100%;
-  background-color: #1f1e1e; }
+  background-color: #5d5d5d; }
 
 #main-content {
   height: 300px;
@@ -6121,8 +6121,11 @@ th.hide-for-touch {
   background-color: #1f1e1e; }
 
 #menu {
-  height: 300px;
-  background-color: #1f1e1e; }
+  height: 60px;
+  background-color: #1f1e1e;
+  position: fixed;
+  bottom: 0;
+  z-index: 999; }
 
 .ad-space {
   height: 8.75rem;
