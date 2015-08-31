@@ -6102,23 +6102,28 @@ th.hide-for-touch {
 
 #header {
   height: 100%;
-  background-color: #5d5d5d; }
+  background-color: #5d5d5d;
+  z-index: 0; }
 
 #main-content {
   height: 300px;
-  background-color: #000000; }
+  background-color: #000000;
+  z-index: 0; }
 
 #bizolhadis {
   height: 300px;
-  background-color: #93e327; }
+  background-color: #93e327;
+  z-index: 0; }
 
 #midis {
   height: 300px;
-  background-color: #000000; }
+  background-color: #000000;
+  z-index: 0; }
 
 #footer {
   height: 300px;
-  background-color: #1f1e1e; }
+  background-color: #1f1e1e;
+  z-index: 0; }
 
 #menu {
   height: 60px;
@@ -6129,4 +6134,5 @@ th.hide-for-touch {
 
 .ad-space {
   height: 8.75rem;
-  background-color: #1f1e1e; }
+  background-color: #1f1e1e;
+  z-index: 0; }

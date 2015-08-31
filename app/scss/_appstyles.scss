@@ -1,26 +1,31 @@
 #header{
 	height: 100%;
 	background-color: #5d5d5d;
+	z-index: 0;
 }
 
 #main-content{
 	height: 300px;
 	background-color: $black;
+	z-index: 0;
 }
 
 #bizolhadis{
 	height: 300px;
 	background-color: $primary-color;
+	z-index: 0;
 }
 
 #midis{
 	height: 300px;
 	background-color: $black;
+	z-index: 0;
 }
 
 #footer{
 	height: 300px;
 	background-color: $gray;
+	z-index: 0;
 }
 
 #menu{
@@ -34,4 +39,5 @@
 .ad-space{
 	height: rem-calc(140);
 	background-color: $gray;
+	z-index: 0;
 }
