@@ -6102,26 +6102,52 @@ th.hide-for-touch {
 
 #header {
   height: 100%;
+  z-index: 0;
   background-color: #5d5d5d;
-  z-index: 0; }
+  background-image: url(../images/bg_home.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: right; }
+  #header .title {
+    margin: auto 0; }
+    #header .title h1 .mussum {
+      font-family: 'Glegoo', serif;
+      color: #FFFFFF;
+      display: block;
+      font-size: 5rem;
+      line-height: 4.375rem; }
+    #header .title h1 .ipsum {
+      font-family: 'Gochi Hand', cursive;
+      color: #93e327;
+      display: block;
+      font-size: 5rem;
+      letter-spacing: 0.25rem;
+      padding-right: 1.25rem;
+      margin-top: -1.75rem;
+      line-height: 3.75rem;
+      margin-top: 0; }
+    #header .title h2 {
+      color: #1f1e1e;
+      font-size: 1.375rem;
+      line-height: 1.375rem; }
 
 #main-content {
-  height: 300px;
+  height: 550px;
   background-color: #000000;
   z-index: 0; }
 
 #bizolhadis {
-  height: 300px;
+  height: 400px;
   background-color: #93e327;
   z-index: 0; }
 
 #midis {
-  height: 300px;
+  height: 220px;
   background-color: #000000;
   z-index: 0; }
 
 #footer {
-  height: 300px;
+  height: 120px;
   background-color: #1f1e1e;
   z-index: 0; }
 

@@ -1,29 +1,61 @@
 #header{
 	height: 100%;
-	background-color: #5d5d5d;
 	z-index: 0;
+	background-color: #5d5d5d;
+	background-image: url(../images/bg_home.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	text-align: right;
+	.title{
+		margin: auto 0;	
+		h1{
+			.mussum{
+				font-family: $font-glegoo;
+				color: $white;
+				display: block;
+				font-size: rem-calc(80);
+				line-height: rem-calc(70);
+			}
+			.ipsum{
+				font-family: $font-gochi;
+				color: $primary-color;			
+				display: block;
+				font-size: rem-calc(80);
+				letter-spacing: rem-calc(4);
+				padding-right: rem-calc(20);
+				margin-top: rem-calc(-28);
+				line-height: rem-calc(60);
+				margin-top: 0;
+			}
+		}
+		h2{	
+			color: $gray;
+			font-size: rem-calc(22);
+			line-height: rem-calc(22);
+		}
+	}
 }
 
 #main-content{
-	height: 300px;
+	height: 550px;
 	background-color: $black;
 	z-index: 0;
 }
 
 #bizolhadis{
-	height: 300px;
+	height: 400px;
 	background-color: $primary-color;
 	z-index: 0;
 }
 
 #midis{
-	height: 300px;
+	height: 220px;
 	background-color: $black;
 	z-index: 0;
 }
 
 #footer{
-	height: 300px;
+	height: 120px;
 	background-color: $gray;
 	z-index: 0;
 }
