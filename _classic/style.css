@@ -1,0 +1,307 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@font-face {
+	font-family: 'Glegoo';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Glegoo'), local('Glegoo-Regular'), url(http://themes.googleusercontent.com/static/fonts/glegoo/v1/HlaektNAGXsvMSzJmADIXOvvDin1pK8aKteLpeZ5c0A.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Gochi Hand';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Gochi Hand'), local('GochiHand-Regular'), url(http://themes.googleusercontent.com/static/fonts/gochihand/v4/ZZzTGmufF-Wq8IS3fkpBu73hpw3pgy2gAi-Ip7WPMi0.woff) format('woff');
+}
+
+*{ margin:0px; padding:0px; }
+
+body{
+	font-family: 'Glegoo';
+	font-style: normal;
+	font-weight: 400;
+	font-size:12px;
+	color:#362f2d;
+}
+
+img a{
+	border:0px;
+}
+
+img {
+	border:0px;
+}
+
+a{
+	color:#362f2d;
+	text-decoration:none;
+	border:0px;
+}
+
+a:hover{
+ 	color:#362f2d;
+	border:0px;
+}
+
+a:link {
+	text-decoration:none;
+	color:#fff;
+	border:0px;
+} 
+
+a:visited {
+	text-decoration:none;
+	color:#fff;
+	border:0px;
+} 
+
+a:active {
+	text-decoration:none;
+	color:#fff;
+	border:0px;
+} 
+
+::selection { 
+background:#49e405; 
+color:#fff; 
+} 
+
+::-moz-selection { 
+background:#49e405; 
+color:#fff; 
+}
+
+::-webkit-selection { 
+background:#49e405; 
+color:#fff; 
+} 
+
+#logo_direita{
+	position:absolute;
+	left:52%;
+	top:30px;
+	height:110px;
+	width:356px;
+	background-image:url(images/mussum-ipsum-logo.png);
+	background-position:left top;
+	background-repeat:no-repeat;
+}
+
+#logo_esquerda{
+	left:100px;
+	top:30px;
+	height:110px;
+	width:356px;
+	position:absolute;
+	background-image:url(images/mussum-ipsum-logo.png);
+	background-position:left top;
+	background-repeat:no-repeat;
+}
+
+#quem{
+	left:100px;
+	top:175px;
+	height:auto;
+	width:356px;
+	padding-bottom:100px;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:11px;
+	position:absolute;
+}
+
+#videos{
+	left:100px;
+	top:780px;
+	height:auto;
+	width:470px;
+	padding-bottom:100px;
+	position:absolute;
+	z-index:1;
+}
+
+#videos h3{
+	font-size:48px;
+	text-transform:uppercase;
+	margin-bottom:20px;
+	margin-top:20px;
+}
+
+#ad1{
+	left:600px;
+	top:710px;
+	height:250px;
+	width:300px;
+	position:absolute;
+	background-color:#f2f2f2;
+}
+
+#ad2{
+	left:600px;
+	top:980px;
+	height:250px;
+	width:300px;
+	position:absolute;
+	background-color:#f2f2f2;
+}
+
+article{
+	position:absolute;
+	left:52%;
+	top:165px;
+	height:400px;
+	width:356px;
+}
+
+article h1{
+	font-family: 'Glegoo';
+	font-style: normal;
+	font-weight: 400;
+	font-size:20px;
+	line-height:60px;
+	color:#362f2d;
+}
+
+footer{
+	height:70px;
+	width:100%;
+	background-color:#fff;
+	position:fixed;
+	bottom:0px;
+	left:0px;
+	padding:0px;
+	margin:0px;
+	float:left;
+	z-index:2;
+}
+
+#center{
+	height:auto;
+	width:900px;
+	left:50%;
+	margin-left:-450px;
+	position:absolute;
+}
+
+#canoabr{
+	height:auto;
+	width:auto;
+	position:relative;
+	float:left;
+}
+
+#canoabr img{
+	padding-top:13px;
+}
+
+#bt_quem{
+	height:auto;
+	width:auto;
+	position:relative;
+	float:left;
+	text-transform:uppercase;
+	margin-left:16px;
+	padding-top:10px;
+}
+
+#bt_home{
+	height:auto;
+	width:auto;
+	position:relative;
+	float:left;
+	text-transform:uppercase;
+	margin-left:16px;
+	padding-top:10px;
+}
+
+#bt_fb{
+	height:auto;
+	width:auto;
+	position:relative;
+	float:left;
+	text-transform:uppercase;
+	margin-left:16px;
+	padding-top:10px;
+}
+
+#compartilhar{
+	height:70px;
+	width:450px;
+	position:relative;
+	float:right;
+}
+
+#gplus{
+	position:relative;
+	margin-top:14px;
+	height:40px;
+	width:60px;
+	margin-left:18px;
+	float:right;
+}
+
+#pinit{
+	position:relative;
+	margin-top:14px;
+	height:40px;
+	width:60px;
+	margin-left:5px;
+	float:right;
+}
+
+#tweetar{
+	position:relative;
+	margin-top:14px;
+	height:40px;
+	width:100px;
+	margin-left:5px;
+	float:right;
+}
+
+#curtir{
+	position:relative;
+	margin-top:14px;
+	height:40px;
+	width:180px;
+	margin-left:5px;
+	float:right;
+}
+
+#seletor{
+	background-color:#49e405;
+	border:0px;
+	height:50px;
+	width:50px;
+	margin-right:6px;
+	margin-bottom:10px;
+	font-family: 'Gochi Hand';
+	font-style: normal;
+	font-weight: 400;
+	font-size:38px;
+	color:#FFF;
+	cursor:pointer;
+}
+
+#lorem{
+	border:0px;
+	height:275px;
+	width:356px;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12px;
+	margin-bottom:100px;
+}
+
+#lorem::selection { 
+background:#49e405; 
+color:#fff; 
+}
+
+#lorem::-webkit-selection { 
+background:#49e405; 
+color:#fff; 
+}
+ 
+#lorem::-moz-selection { 
+background:#49e405; 
+color:#fff; 
+}
