@@ -2,7 +2,7 @@
 	height: 100%;
 	z-index: 0;
 	background-color: #5d5d5d;
-	background-image: url(../images/bg_home.png);
+	background-image: url(../img/bg_home.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	text-align: right;
@@ -10,14 +10,14 @@
 		margin: auto 0;	
 		h1{
 			.mussum{
-				font-family: $font-glegoo;
+				font-family: $glegoo;
 				color: $white;
 				display: block;
 				font-size: rem-calc(80);
 				line-height: rem-calc(70);
 			}
 			.ipsum{
-				font-family: $font-gochi;
+				font-family: $gochi-hand;
 				color: $primary-color;			
 				display: block;
 				font-size: rem-calc(80);
@@ -29,7 +29,7 @@
 			}
 		}
 		h2{	
-			color: $gray;
+			color: $medium-gray;
 			font-size: rem-calc(22);
 			line-height: rem-calc(22);
 		}
@@ -56,13 +56,13 @@
 
 #footer{
 	height: 120px;
-	background-color: $gray;
+	background-color: $medium-gray;
 	z-index: 0;
 }
 
 #menu{
 	height: 60px;
-	background-color: $gray;
+	background-color: $medium-gray;
 	position: fixed;
 	bottom: 0;
 	z-index: 999;
@@ -70,6 +70,6 @@
 
 .ad-space{
 	height: rem-calc(140);
-	background-color: $gray;
+	background-color: $medium-gray;
 	z-index: 0;
 }
