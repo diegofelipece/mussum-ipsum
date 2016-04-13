@@ -29,7 +29,7 @@
 			}
 		}
 		h2{	
-			color: $medium-gray;
+			color: $dark-gray;
 			font-size: rem-calc(22);
 			line-height: rem-calc(22);
 		}
@@ -37,7 +37,7 @@
 }
 
 #main-content{
-	height: 550px;
+	min-height: 550px;
 	background-color: $black;
 	z-index: 0;
 }
@@ -56,20 +56,22 @@
 
 #footer{
 	height: 120px;
-	background-color: $medium-gray;
+	background-color: $dark-gray;
 	z-index: 0;
 }
 
 #menu{
-	height: 60px;
-	background-color: $medium-gray;
 	position: fixed;
 	bottom: 0;
+	left: 0;
 	z-index: 999;
+	height: 60px;
+	width: 100%;
+	background-color: $dark-gray;
 }
 
 .ad-space{
 	height: rem-calc(140);
-	background-color: $medium-gray;
+	background-color: $dark-gray;
 	z-index: 0;
 }

@@ -9,16 +9,17 @@ var app = (function(document, $) {
 			$(document).foundation();
 			
 		    // mIpsum -> set the function of trigger call
-			$('#mIpsumTrigger').on('click', function(event) {
-				event.preventDefault();
+		    $('#mipsum').on('submit', function(event) {
+		    	event.preventDefault();
 
-				// console.log('há!');
-
-				var turns = $('#turns').val(),
+		    	var turns = $(this).find('#turns').val(),
 					pTagSet = false,
 					hTagSet = false;
+
+				console.log(turns);
+
 				mIpsumTrigger(turns, pTagSet, hTagSet);
-			});
+		    });
 
 			_userAgentInit();
 		};
