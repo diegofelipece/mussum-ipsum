@@ -108,7 +108,7 @@
 #midis{
 	padding: 60px 0;
 	min-height: 160px;
-	background-color: $secondary-color;
+	background-color: $black;
 	z-index: 0;
 	.box{
 		max-width: 200px;
@@ -120,7 +120,7 @@
 #footer{
 	padding: 30px 0;
 	min-height: 100px;
-	background-color: $black;
+	background-color: $secondary-color;
 	z-index: 0;
 	.credits{	
 		color: $light-gray;
@@ -139,8 +139,8 @@
 	background-color: $secondary-color;
 }
 
-.ad-space{
-	height: 130px;
+.ad-space{	
+	height: auto;
 	background-color: $secondary-color;
 	z-index: 0;
 	padding: 20px 0;
