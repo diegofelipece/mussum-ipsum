@@ -144,10 +144,13 @@
 	background-color: $secondary-color;
 	z-index: 0;
 	padding: 20px 0;
+    overflow: hidden;		
 	.banner{
 	    position: relative;
 	    float: none;
-	    width: auto;
-	    height: auto;		
+	    width: 100%;
+	    max-width: 100%;
+	    height: auto;
+	    overflow: hidden;		
 	}
 }
