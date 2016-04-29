@@ -36,7 +36,7 @@ PATHS:
     - "bower_components/foundation-sites/js/foundation.util.*.js"
     # Individual Foundation components
     # If you aren't using a component, just remove it from the list
-    - "bower_components/foundation-sites/js/foundation.abide.js"
+    # - "bower_components/foundation-sites/js/foundation.abide.js"
     # - "bower_components/foundation-sites/js/foundation.accordion.js"
     # - "bower_components/foundation-sites/js/foundation.accordionMenu.js"
     # - "bower_components/foundation-sites/js/foundation.drilldown.js"
