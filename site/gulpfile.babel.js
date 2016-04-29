@@ -65,12 +65,12 @@ function resetPages(done) {
 }
 
 // Generate a style guide from the Markdown content and HTML template in styleguide/
-function styleGuide(done) {
-  sherpa('src/styleguide/index.md', {
-    output: PATHS.dist + '/styleguide.html',
-    template: 'src/styleguide/template.html'
-  }, done);
-}
+// function styleGuide(done) {
+//   sherpa('src/styleguide/index.md', {
+//     output: PATHS.dist + '/styleguide.html',
+//     template: 'src/styleguide/template.html'
+//   }, done);
+// }
 
 // Compile Sass into CSS
 // In production, the CSS is compressed
@@ -131,5 +131,5 @@ function watch() {
   gulp.watch('src/assets/scss/**/*.scss', sass);
   gulp.watch('src/assets/js/**/*.js', gulp.series(javascript, browser.reload));
   gulp.watch('src/assets/img/**/*', gulp.series(images, browser.reload));
-  gulp.watch('src/styleguide/**', gulp.series(styleGuide, browser.reload));
+  // gulp.watch('src/styleguide/**', gulp.series(styleGuide, browser.reload));
 }
