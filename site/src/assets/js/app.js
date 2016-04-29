@@ -16,10 +16,13 @@ var app = (function(document, $) {
 					pTagSet = false,
 					hTagSet = false;
 
-				console.log(turns);
+				// console.log(turns);
 
 				mIpsumTrigger(turns, pTagSet, hTagSet);
 		    });
+
+		    // one at load
+			mIpsumTrigger(1, false, false);
 
 			_userAgentInit();
 		};

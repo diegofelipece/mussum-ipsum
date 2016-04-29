@@ -6,6 +6,9 @@
 	background-position: center;
 	background-repeat: no-repeat;
 	text-align: right;
+	> .row{
+		height: 100% !important;
+	}
 	.title{
 		margin: auto 0;	
 		h1{
@@ -37,9 +40,49 @@
 }
 
 #main-content{
-	min-height: 550px;
+	margin: 60px 0;
+	min-height: 200px;
 	background-color: $black;
 	z-index: 0;
+	#mipsum{
+		height: auto;
+		width: 100%;
+		float: left;
+		#turns{
+			width: 80px;
+			float: left;
+			font-size: 18px;
+			font-weight: $bold;	
+			background: $secondary-color;
+			color: $white;
+			border: none;
+			text-align: center;	
+			margin: 0 10px;
+		}
+		.text{
+			width: auto;
+			float: left;
+			font-size: 16px;
+			font-weight: $bold;
+			line-height: 40px;
+		}
+		#mIpsumTrigger{
+			float: right;
+			color: $black;
+			font-weight: bold;
+		}
+	}
+	#result{
+		width: 100%;
+		float: left;
+		background-color: $white;
+		padding: 20px;
+		max-height: 300px;
+		overflow-y: scroll; 
+		color: $secondary-color;
+		font-size: 16px;
+		font-weight: bold;
+	}
 }
 
 #bizolhadis{
