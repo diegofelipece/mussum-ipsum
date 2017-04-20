@@ -1,4 +1,4 @@
-/* 
+/*
 ---------------
 mipsum.js v0.2
 ---------------
@@ -11,9 +11,9 @@ Proudly made for mussumipsum.com by Diego Esteves
   */
     // Define the min and max value to sort
     var n,
-        min = 1, 
+        min = 1,
         max = "";
-    function getRandomNumber(min, max) { 
+    function getRandomNumber(min, max) {
       n = Math.random() * (max - min) + min;
       return Math.round(n) -1; // 1 less of the total arrays to adjust with the array index
     }
@@ -24,49 +24,6 @@ Proudly made for mussumipsum.com by Diego Esteves
   */
     function creatingParagraphs() {
       // Define quotes
-
-      // var quotes = [
-      //   "quote1",
-      //   "quote2",
-      //   "quote3",
-      //   "quote4",
-      //   "quote5",
-      //   "quote6",
-      //   "quote7",
-      //   "quote8",
-      //   "quote9",
-      //   "quote10",
-      //   "quote11",
-      //   "quote12",
-      //   "quote13",
-      //   "quote14",
-      //   "quote15",
-      //   "quote16",
-      //   "quote17",
-      //   "quote18",
-      //   "quote19",
-      //   "quote20",
-      //   "quote21",
-      //   "quote22",
-      //   "quote23",
-      //   "quote24",
-      //   "quote25",
-      //   "quote26",
-      //   "quote27",
-      //   "quote28",
-      //   "quote29",
-      //   "quote30",
-      //   "quote31",
-      //   "quote32",
-      //   "quote33",
-      //   "quote34",
-      //   "quote35",
-      //   "quote36",
-      //   "quote37",
-      //   "quote38",
-      //   "quote39",
-      //   "quote40"
-      // ];
 
       var quotes = [
         "Pra lá , depois divoltis porris, paradis. ",
@@ -83,24 +40,25 @@ Proudly made for mussumipsum.com by Diego Esteves
         "Viva Forevis aptent taciti sociosqu ad litora torquent ",
         "Copo furadis é disculpa de bebadis, arcu quam euismod magna. ",
         "Delegadis gente finis, bibendum egestas augue arcu ut est. ",
-        "in elementis mé pra quem é amistosis quis leo. ",
+        "In elementis mé pra quem é amistosis quis leo. ",
         "Não sou faixa preta cumpadi, sou preto inteiris, inteiris. ",
-        "Mais vale um bebadis conhecidiss, que um alcoolatra anonimiss. ",
-        "Suco de cevadiss deixa as pessoas mais interessantiss. ",
-        "Ta deprimidis, eu conheço uma cachacis que pode alegrar sua vidis.” ",
+        "Mais vale um bebadis conhecidiss, que um alcoolatra anonimis. ",
+        "Suco de cevadiss deixa as pessoas mais interessantis. ",
+        "Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis. ",
         "Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo! ",
-        "Quem manda na minha terra sou Euzis! ",
+        "Quem manda na minha terra sou euzis! ",
         "Si num tem leite então bota uma pinga aí cumpadi! ",
         "Diuretics paradis num copo é motivis de denguis. ",
         "Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose. ",
-        "A ordem dos tratores não altera o pão duris ",
-        "Quem num gosti di mum que vai caçá sua turmis! ",
-        "Quem num gosta di mé, boa gente num é. ",
+        "A ordem dos tratores não altera o pão duris. ",
+        "Quem num gosta di mim que vai caçá sua turmis! ",
+        "Quem num gosta di mé, boa gentis num é. ",
         "Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis! ",
         "Per aumento de cachacis, eu reclamis. ",
         "Detraxit consequat et quo num tendi nada. ",
         "Admodum accumsan disputationi eu sit. Vide electram sadipscing et per. ",
-        "Leite de capivaris, leite de mula manquis. ",
+        "Leite de capivaris, leite de mula manquis sem cabeça. ",
+        "Aenean aliquam molestie leo, vitae iaculis nisl. ",
         "Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget. ",
         "Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. ",
         "Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum felis. ",
@@ -138,7 +96,7 @@ Proudly made for mussumipsum.com by Diego Esteves
       };
 
       // console.log(paragraphs);
-      sortParagraphs();    
+      sortParagraphs();
     };
 
   /*
@@ -197,7 +155,7 @@ Proudly made for mussumipsum.com by Diego Esteves
       divResult.innerHTML = result;
 
       // reset "mIpsumStartCount"
-      window.mIpsumStartCount = 0;      
+      window.mIpsumStartCount = 0;
     };
   /*
   Triggres
@@ -216,7 +174,7 @@ Proudly made for mussumipsum.com by Diego Esteves
         window.laps = window.turns;
         creatingParagraphs();
         // console.log('criou menos de 10 paragrafos e guardou na variavel');
-        // console.log('Imprime a variavel');     
+        // console.log('Imprime a variavel');
         showResult();
       } else{
         for( ;window.turns > 10; ){
@@ -234,22 +192,10 @@ Proudly made for mussumipsum.com by Diego Esteves
             // console.log('window.turns = ' + window.turns);
             // console.log('criou menos de 10 paragrafos e guardou na variavel');
             creatingParagraphs();
-            // console.log('Imprime a variavel');            
+            // console.log('Imprime a variavel');
             showResult();
           };
         };
       }
 
     };
-
-
-
-
-
-
-
-
-
-
-
-
