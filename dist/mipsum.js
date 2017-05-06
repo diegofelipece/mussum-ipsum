@@ -47,11 +47,11 @@ var mussumQuotes = [
 var mIpsum = function( pNum = 1, quotes = mussumQuotes, maxOfp = 9999){
   /* Function to sort a number
   ----------------- > */
-  var n, min, max;
-  var getRandomNumber = function(min = 1, max) {
+  var n, min = 1, max;
+  var getRandomNumber = function(min, max) {
     n = Math.random() * (max - min) + min;
     return Math.round(n) -1; // 1 less of the total arrays to adjust with the array index
-  }
+  };
 
   /*  create
   ----------------- > */
@@ -74,24 +74,20 @@ var mIpsum = function( pNum = 1, quotes = mussumQuotes, maxOfp = 9999){
           tempParagraph += q + " "; // append the quote on a temp string
           tempQuotes.splice(randomResult, 1); //exlude the used value for the array
           max --; //decrease max getRandomNumber
-          // console.log(tempQuotes);
-          // console.log(tempParagraph);
 
           if (i==3) {
             // Push the the tem string to the paragraphs array
-            // tempParagraph += "\n" ; // append the quote on a temp string
             paragraphs.push(tempParagraph);
             // console.log(tempParagraph);
             break;
-          };
-        };
+          }
+        }
       }
-    };
+    }
 
     var quotesLength = quotes.length;
     var limit = Math.floor(quotesLength/4);
-    // console.log(limit);
-    // console.log(pNum);
+
     //quantas vezes vai rodar depende do limite
     if ( pNum <= limit) {
       // console.log('só precisa rodar uma vez');
@@ -113,9 +109,8 @@ var mIpsum = function( pNum = 1, quotes = mussumQuotes, maxOfp = 9999){
     var result = "";
     var paragraphs = createParagraphs(pNum, quotes);
 
-
     for (var i = 0; i < pNum; i++) {
-      if (i == 0) {
+      if (i === 0) {
         result += "Mussum Ipsum, cacilds vidis litro abertis. ";
       }
       result += paragraphs[i];
@@ -126,6 +121,6 @@ var mIpsum = function( pNum = 1, quotes = mussumQuotes, maxOfp = 9999){
   } else {
     console.error('I guess this is too much!');
   }
-}
+};
 
 window.mIpsum = mIpsum;

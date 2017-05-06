@@ -3,7 +3,7 @@ var $       	    = require('gulp-load-plugins')();
 var	uglify 		    = require('gulp-uglify');
 var	clean 		    = require('gulp-clean');
 var	concat 		    = require('gulp-concat');
-var jshint        = require('gulp-jshint');
+var babel         = require('gulp-babel');
 var runSeq        = require('run-sequence');
 
 var src = 'src/mipsum.js'
@@ -26,8 +26,10 @@ gulp.task('copy', function() {
 // Javascript
 gulp.task('js', function() {
   return gulp.src(src)
-    .pipe(jshint())
     .pipe(concat('mipsum.min.js'))
+    .pipe(babel({
+      presets: ['es2015']
+    }))
     .pipe(uglify())
     .pipe(gulp.dest(dist));
 });
