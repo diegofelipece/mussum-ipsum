@@ -1,14 +1,10 @@
-# Mussum Ipsum v2.0.1
+# mIpsum v2.0.2
 
-[mussumipsum.com](http://mussumipsum.com)
-
-This is the oficial repository of the Mussum Ipsum, a Brasilian Lorem Ipsum. Please, take everything you want, just give the correct credits. ;)
-
-Here you can find the first version too, if you want it.
+mIpsum is a Javascript lorem ipsum generator, created to serve the [mussumipsum.com](http://mussumipsum.com), a brasilian dummy text generator.
 
 --
 
-Soon I'll explain step by step how can you use it to create your own Lorem Ipsum Generator.
+Soon I'll explain step by step.
 
 --
 

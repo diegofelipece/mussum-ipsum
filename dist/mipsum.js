@@ -1,6 +1,6 @@
 /*
 ---------------
-mipsum.js v0.2
+mipsum.js v2.0.2
 ---------------
 Proudly made for mussumipsum.com by Diego Esteves
 */
