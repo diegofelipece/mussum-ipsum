@@ -1,16 +1,16 @@
 {
   "name": "mipsum",
+  "version": "2.0.2",
+  "authors": [
+    "Diego Esteves <hello@diegoesteves.ink>"
+  ],
+  "main": "src/mipsum.js",
   "description": "A lorem ipsum generator",
   "keywords": [
     "lorem ipsum",
     "dummy text",
     "placeholder"
   ],
-  "version": "2.0.2",
-  "authors": [
-    "Diego Esteves <hello@diegoesteves.ink>"
-  ],
-  "main": "src/mipsum.js",
   "license": "MIT",
   "homepage": "https://github.com/diegofelipece/Mussum-Ipsum",
   "ignore": [
