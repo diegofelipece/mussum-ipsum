@@ -1,5 +1,5 @@
 /* ---------------
-mipsum.js v2.0.3
+mipsum.js v2.0.4
 --------------- */
 var mussumQuotes = [
   "Pra lá , depois divoltis porris, paradis. ",

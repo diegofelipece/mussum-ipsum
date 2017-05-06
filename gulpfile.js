@@ -22,6 +22,16 @@ gulp.task('copy', function() {
     .pipe(gulp.dest(dist));
 });
 
+// basic
+gulp.task('js_basic', function() {
+  return gulp.src(src)
+    .pipe(concat('mipsum.js'))
+    .pipe(babel({
+      presets: ['es2015']
+    }))
+    .pipe(gulp.dest(dist));
+});
+
 
 // Javascript
 gulp.task('js', function() {
@@ -36,5 +46,5 @@ gulp.task('js', function() {
 
 // Build task
 gulp.task('default', function (cb) {
-  runSeq('clean', ['copy', 'js'], cb)
+  runSeq('clean', ['js', 'js_basic'], cb)
 });
