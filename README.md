@@ -1,12 +1,29 @@
 # mIpsum v2.0.4
 
-mIpsum is a Javascript lorem ipsum generator, created to serve the [mussumipsum.com](http://mussumipsum.com), a brasilian dummy text generator.
+This is a Javascript lorem ipsum generator, created for [mussumipsum.com](http://mussumipsum.com), a brasilian dummy text generator.
 
---
+____
 
-Soon I'll explain step by step.
+Add using Bower or just download the project.
 
---
+```
+bower install mipsum --save-dev
+```
+
+Just add mipsum.min.js to your project and manipulate via JS. See the demo using jQuery.
+
+```
+$(function(){
+  $('#howManyForm').on('submit', function(event) {
+    event.preventDefault();
+    var mussumIpsum = window.mIpsum($('#howMany').val());
+    $('#mussum-ipsum').html(mussumIpsum);
+  });
+});
+
+```
+
+____
 
 Created by Diego Esteves under The MIT License (MIT)
 
