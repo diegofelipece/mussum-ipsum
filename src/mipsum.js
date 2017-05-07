@@ -1,6 +1,7 @@
 /* ---------------
-mipsum.js v2.0.4
+mipsum.js v2.0.5
 --------------- */
+var mussumMainQuote = "Mussum Ipsum, cacilds vidis litro abertis. ";
 var mussumQuotes = [
   "Pra lá , depois divoltis porris, paradis. ",
   "Paisis, filhis, espiritis santis. ",
@@ -44,7 +45,7 @@ var mussumQuotes = [
   "Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum. "
 ];
 
-var mIpsum = function( pNum = 1, quotes = mussumQuotes, maxOfp = 9999){
+var mIpsum = function( pNum = 1, quotes = mussumQuotes, mainQuote = mussumMainQuote, maxOfp = 9999){
   /* Function to sort a number
   ----------------- > */
   var n, min = 1, max;
@@ -110,10 +111,11 @@ var mIpsum = function( pNum = 1, quotes = mussumQuotes, maxOfp = 9999){
     var paragraphs = createParagraphs(pNum, quotes);
 
     for (var i = 0; i < pNum; i++) {
+      result += '<p>';
       if (i === 0) {
-        result += "Mussum Ipsum, cacilds vidis litro abertis. ";
+        result += mainQuote;
       }
-      result += paragraphs[i];
+      result += paragraphs[i]+'</p>';
     }
 
     return result;

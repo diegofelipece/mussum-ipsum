@@ -45,6 +45,10 @@ gulp.task('js', function() {
 });
 
 // Build task
-gulp.task('default', function (cb) {
+gulp.task('build', function (cb) {
   runSeq('clean', ['js', 'js_basic'], cb)
+});
+
+gulp.task('default', ['build'], function() {
+	gulp.watch(['src/**/{*.js}'], ['js', 'js_basic']);
 });

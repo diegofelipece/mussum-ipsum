@@ -1,6 +1,6 @@
 {
   "name": "mipsum",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "A lorem ipsum generator",
   "main": "index.js",
   "dependencies": {},
