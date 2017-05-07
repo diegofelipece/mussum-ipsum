@@ -10,18 +10,19 @@ Add using Bower or just download the project.
 bower install mipsum --save-dev
 ```
 
-Just add mipsum.min.js to your project and manipulate via JS. See the demo using jQuery.
+Just add mipsum.min.js to your project and manipulate it via JS. See a basic exemple using jQuery:
 
 ```
+
 $(function(){
-  $('#howManyForm').on('submit', function(event) {
-    event.preventDefault();
-    var mussumIpsum = window.mIpsum($('#howMany').val());
-    $('#mussum-ipsum').html(mussumIpsum);
-  });
+  var mussumIpsum = window.mIpsum(10); //How many paragraphs do you want
+  $('body').append('<div id="mussum-ipsum">'+mussumIpsum+'</div>');
+  // This will add to thw body of the documment a div with 10 paragraphs. 
 });
 
 ```
+
+I'm working on improove the custom mode, where you will be able to change default quotes for yours.
 
 ____
 
