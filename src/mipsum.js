@@ -1,5 +1,5 @@
 /* ---------------
-mipsum.js v2.0.5
+mipsum.js v2.0.6
 --------------- */
 var mussumMainQuote = "Mussum Ipsum, cacilds vidis litro abertis. ";
 var mussumQuotes = [
