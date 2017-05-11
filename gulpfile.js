@@ -50,5 +50,5 @@ gulp.task('build', function (cb) {
 });
 
 gulp.task('default', ['build'], function() {
-	gulp.watch(['src/**/{*.js}'], ['js', 'js_basic']);
+	gulp.watch(['src/*.js'], ['js', 'js_basic']);
 });

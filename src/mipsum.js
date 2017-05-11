@@ -45,7 +45,13 @@ var mussumQuotes = [
   "Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum. "
 ];
 
-var mIpsum = function( pNum = 1, quotes = mussumQuotes, mainQuote = mussumMainQuote, maxOfp = 9999){
+var options = [
+  pNum = 1,
+  quotes = mussumQuotes,
+  mainQuote = mussumMainQuote,
+  maxOfp = 9999
+];
+var mIpsum = function(options){
   /* Function to sort a number
   ----------------- > */
   var n, min = 1, max;

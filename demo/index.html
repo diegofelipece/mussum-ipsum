@@ -2,17 +2,23 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>mIpsum Test</title>
-    <!-- Vendor -->
+    <title>mIpsum.js - Script Demo</title>
+
+    <!-- Vendors -->
     <link rel="stylesheet" href="vendors/bootstrap.min.css">
     <script src="vendors/jquery.min.js"></script>
     <script src="vendors/bootstrap.min.js"></script>
     <script src="../src/mipsum.js"></script>
+
+    <!-- Calls for mIpsum.js -->
     <script type="text/javascript">
       $(function(){
         $('#mussumIpsumForm').on('submit', function(event) {
           event.preventDefault();
-          var mussumIpsum = window.mIpsum($(this).find('.howMany').val());
+          var mussumOptions = [
+            pNum = $(this).find('.howMany').val()
+          ];
+          var mussumIpsum = window.mIpsum(mussumOptions);
           console.log(mussumIpsum);
           $('#mussum-ipsum').html(mussumIpsum);
         });
@@ -67,7 +73,12 @@
             "And if you want some fun",
             "Take ob-la-di ob-la-da"
           ];
-          var customIpsum = window.mIpsum($('#customForm .howMany').val(), olbaDioblaDa, beatlesIpsum, 9999999);
+          var customOptions = [
+            pNum = $('#customForm .howMany').val(),
+            quotes = olbaDioblaDa,
+            mainQuote = beatlesIpsum
+          ];
+          var customIpsum = window.mIpsum(customOptions);
           console.log(customIpsum);
           $('#customIpsum').html(customIpsum);
         });
