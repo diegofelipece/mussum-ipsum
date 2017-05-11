@@ -56,7 +56,9 @@ var mIpsum = function( pNum = 1, quotes = mussumQuotes, mainQuote = mussumMainQu
 
   /*  create
   ----------------- > */
-  var createParagraphs = function(pNum, quotes) {
+  var quotesLength = quotes.length,
+      limit = Math.floor(quotesLength/4),
+      createParagraphs = function(pNum, quotes) {
 
     var paragraphs = [];
 
@@ -67,6 +69,7 @@ var mIpsum = function( pNum = 1, quotes = mussumQuotes, mainQuote = mussumMainQu
       // console.log(tempQuotes);
       for (var y = 0; y < limit; y++){
         // 1 paragraph == 4 quotes
+        var tempQuotesLength = tempQuotes.length;
         for (var i = 0, tempParagraph = ""; i < 4; i++){
           // sort function
           var randomResult = getRandomNumber(min, tempQuotes.length);
@@ -79,47 +82,50 @@ var mIpsum = function( pNum = 1, quotes = mussumQuotes, mainQuote = mussumMainQu
           if (i==3) {
             // Push the the tem string to the paragraphs array
             paragraphs.push(tempParagraph);
-            // console.log(tempParagraph);
             break;
           }
         }
       }
     }
 
-    var quotesLength = quotes.length;
-    var limit = Math.floor(quotesLength/4);
-
-    //quantas vezes vai rodar depende do limite
+    // using the "limit" to define how many times we need to generate new ones.
     if ( pNum <= limit) {
-      // console.log('só precisa rodar uma vez');
+      // console.log('-- junt once');
       generateOriginalParagraphs(quotes, limit);
     } else {
       var v = Math.ceil(pNum/limit);
-      // console.log('precisa rodar ' + v + ' vezes' );
+      // console.log('-- run ' + v + ' times' );
       for (var i = 0; i < v; i++) {
         generateOriginalParagraphs(quotes, limit);
       }
     }
-
     return paragraphs;
   };
 
   /*  show
   ----------------- > */
   if (pNum <= maxOfp) {
-    var result = "";
-    var paragraphs = createParagraphs(pNum, quotes);
+    if (quotesLength >= 4) {
+      var result = "";
+      var paragraphs = createParagraphs(pNum, quotes);
 
-    for (var i = 0; i < pNum; i++) {
-      result += '<p>';
-      if (i === 0) {
-        result += mainQuote;
+      for (var i = 0; i < pNum; i++) {
+        result += '<p>';
+        if (i === 0) {
+          result += mainQuote;
+        }
+        result += paragraphs[i]+'</p>';
       }
-      result += paragraphs[i]+'</p>';
+
+      return result;
+
+    } else{
+
+      var err = "Error! You need at least 4 quotes on the pointed array.";
+      console.error(err);
+      return err;
+
     }
-
-    return result;
-
   } else {
     console.error('I guess this is too much!');
   }

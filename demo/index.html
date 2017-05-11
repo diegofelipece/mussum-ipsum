@@ -3,23 +3,75 @@
   <head>
     <meta charset="utf-8">
     <title>mIpsum Test</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- Vendor -->
+    <link rel="stylesheet" href="vendors/bootstrap.min.css">
+    <script src="vendors/jquery.min.js"></script>
+    <script src="vendors/bootstrap.min.js"></script>
     <script src="../src/mipsum.js"></script>
     <script type="text/javascript">
-    $(function(){
-      $('#mussumIpsumForm').on('submit', function(event) {
-        event.preventDefault();
-        var mussumIpsum = window.mIpsum($(this).find('.howMany').val());
-        console.log(mussumIpsum);
-        $('#mussum-ipsum').html(mussumIpsum);
+      $(function(){
+        $('#mussumIpsumForm').on('submit', function(event) {
+          event.preventDefault();
+          var mussumIpsum = window.mIpsum($(this).find('.howMany').val());
+          console.log(mussumIpsum);
+          $('#mussum-ipsum').html(mussumIpsum);
+        });
+
+        // Working on improove custom ipsum
+        $('#customForm').on('submit', function(event) {
+          event.preventDefault();
+          var beatlesIpsum = "Beatles Ipsum, Ob-la-di Ob-la-da. ";
+          var olbaDioblaDa = [
+            "Desmond has a barrow in the market place",
+            "Molly is the singer in a band",
+            "Desmond says to Molly girl I like your face",
+            "And Molly says this as she takes him by the hand",
+            "Ob-la-di ob-la-da life goes on bra",
+            "La-la how the life goes on",
+            "Ob-la-di ob-la-da life goes on bra",
+            "La-la how the life goes on",
+            "Desmond takes a trolley to the jewellers stores",
+            "Buys a twenty carat golden ring (Golden ring?)",
+            "Takes it back to Molly waiting at the door",
+            "And as he gives it to her she begins to sing (Sing)",
+            "Ob-la-di ob-la-da life goes on bra",
+            "La-la how the life goes on",
+            "Ob-la-di ob-la-da life goes on bra",
+            "La-la how the life goes on, yeah (No)",
+            "In a couple of years they have built",
+            "A home sweet home",
+            "With a couple of kids running in the yard",
+            "Of Desmond and Molly Jones",
+            "(Ah ha ha ha ha ha)",
+            "Happy ever after in the market place",
+            "Desmond let's the children lend a hand (Arm! Leg!)",
+            "Molly stays at home and does her pretty face",
+            "And in the evening she's a singer with the band",
+            "Yes, ob-la-di ob-la-da life goes on bra",
+            "La-la how the life goes on (Ha ha ha)",
+            "Hey, ob-la-di ob-la-da life goes on bra",
+            "La-la how the life goes on",
+            "In a couple of years they have built",
+            "A home sweet home",
+            "With a couple of kids running in the yard",
+            "Of Desmond and Molly Jones",
+            "(Ha ha ha ha ha ha ha ha ha ha)",
+            "Yeah, happy ever after in the market place",
+            "Molly let's the children lend a hand (Foot!)",
+            "Desmond stays at home and does his pretty face",
+            "And in the evening she's a singer with the band",
+            "Yeah, ob-la-di ob-la-da life goes on bra",
+            "La-la how the life goes on",
+            "Yeah, ob-la-di ob-la-da life goes on bra",
+            "La-la how the life goes on",
+            "And if you want some fun",
+            "Take ob-la-di ob-la-da"
+          ];
+          var customIpsum = window.mIpsum($('#customForm .howMany').val(), olbaDioblaDa, beatlesIpsum, 9999999);
+          console.log(customIpsum);
+          $('#customIpsum').html(customIpsum);
+        });
       });
-    });
     </script>
   </head>
   <body>
@@ -33,11 +85,37 @@
           <form class="col-xs-12" id="mussumIpsumForm">
             <div class="form-group">
               <label for="howMany">How many paragraphs?</label>
-              <input type="number" class="form-control howMany" max="9999" value="1">
+              <input type="number" class="form-control howMany" max="99999" value="1">
             </div>
             <div class="form-group">
               <label for="exampleInputFile">Results</label>
               <div class="form-control" id="mussum-ipsum" style="height: auto; min-height: 100px;"></div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-12">
+                <button type="submit" class="btn btn-default">Create</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="col-md-offset-3 col-md-6">
+        <div class="row">
+          <div class="col-xs-12">
+            <h1>Example of custom use</h1>
+            <p>Changing the array of quotes for beatles songs</p>
+          </div>
+          <form class="col-xs-12" id="customForm">
+            <div class="form-group">
+              <label for="howMany">How many paragraphs?</label>
+              <input type="number" class="form-control howMany" max="9999" value="1">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputFile">Results</label>
+              <div class="form-control" id="customIpsum" style="height: auto; min-height: 100px;"></div>
             </div>
             <div class="form-group">
               <div class="col-sm-12">
