@@ -49,7 +49,10 @@ var options = [
   pNum = 1,
   quotes = mussumQuotes,
   mainQuote = mussumMainQuote,
-  maxOfp = 9999
+  maxOfp = 9999,
+  resultType = 'html',
+  tagBefore = '<p>',
+  tagAfter = '</p>'
 ];
 var mIpsum = function(options){
   /* Function to sort a number
@@ -115,22 +118,35 @@ var mIpsum = function(options){
       var result = "";
       var paragraphs = createParagraphs(pNum, quotes);
 
+      // eliminate the excedents paragraphs to return the right number
       for (var i = 0; i < pNum; i++) {
-        result += '<p>';
-        if (i === 0) {
-          result += mainQuote;
+
+        if (resultType === 'html') {
+          // tags on the paragraph
+          result += tagBefore;
+          if (i === 0) {
+            result += mainQuote;
+          }
+          result += paragraphs[i]+tagAfter;
+
+        } else if(resultType === 'text'){
+          // only a break of line
+          if (i === 0) {
+            result += mainQuote;
+          }
+          result += paragraphs[i]+'\n\n';
+
+        } else{
+          console.error('Error.');
         }
-        result += paragraphs[i]+'</p>';
+
       }
 
       return result;
 
     } else{
-
       var err = "Error! You need at least 4 quotes on the pointed array.";
       console.error(err);
-      return err;
-
     }
   } else {
     console.error('I guess this is too much!');

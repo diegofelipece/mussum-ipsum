@@ -76,7 +76,10 @@
           var customOptions = [
             pNum = $('#customForm .howMany').val(),
             quotes = olbaDioblaDa,
-            mainQuote = beatlesIpsum
+            mainQuote = beatlesIpsum,
+            tagBefore = '<h1>',
+            tagAfter = '</h1>',
+            resultType = 'text'
           ];
           var customIpsum = window.mIpsum(customOptions);
           console.log(customIpsum);
@@ -126,7 +129,7 @@
             </div>
             <div class="form-group">
               <label for="exampleInputFile">Results</label>
-              <div class="form-control" id="customIpsum" style="height: auto; min-height: 100px;"></div>
+              <textarea class="form-control" id="customIpsum" style="height: auto; min-height: 100px;"></textarea>
             </div>
             <div class="form-group">
               <div class="col-sm-12">
