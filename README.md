@@ -18,7 +18,7 @@ Just add mipsum.min.js to your project and add a call via JS.
 
 mIpsum was created using plane Javascript (ES2015), to allow you to decide if you want to include it in a jQuery context for example:
 
-```
+``` javascript
 $(function(){
   var mussumIpsum = window.mIpsum({pNum: 10}); //How many paragraphs do you want
   $('body').append('<div id="mussum-ipsum">'+mussumIpsum+'</div>');
@@ -29,7 +29,7 @@ $(function(){
 There are another customized options to you. More examples at demo/index.html
 
 Options (with defaults to exemplify):
-```
+``` javascript
 mIpsum({
   pNum: 1, //number of paragraphs
   quotes: mussumQuotes, //array with at least 4 quotes
