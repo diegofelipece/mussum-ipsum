@@ -1,28 +1,45 @@
 # mIpsum v2.1.1
 
-This is a Javascript lorem ipsum generator, created for [mussumipsum.com](http://mussumipsum.com), a brasilian dummy text generator.
+This is a Javascript lorem ipsum generator, created for [mussumipsum.com](http://mussumipsum.com), a brasilian dummy text generator. You can use it to develop anything that concern Mussum Ipsum (like a plugin for Sublime or Atom or whatever), or to create your own customized Lorem Ipsum.
 
 ____
 
-Add using Bower or just download the project.
+Add it to your projetc using Bower or just download code.
 
-```
+``` bash
 bower install mipsum --save-dev
 ```
 
-Just add mipsum.min.js to your project and manipulate it via JS. See a basic exemple using jQuery:
+Just add mipsum.min.js to your project and add a call via JS.
 
+``` html
+<script src="path/to/mipsum.min.js"></script>
 ```
 
+mIpsum was created using plane Javascript (ES2015), to allow you to decide if you want to include it in a jQuery context for example:
+
+```
 $(function(){
-  var mussumIpsum = window.mIpsum(10); //How many paragraphs do you want
+  var mussumIpsum = window.mIpsum({pNum: 10}); //How many paragraphs do you want
   $('body').append('<div id="mussum-ipsum">'+mussumIpsum+'</div>');
   // This will add to thw body of the documment a div with 10 paragraphs. 
 });
-
 ```
 
-I'm working on improove the custom mode, where you will be able to change default quotes for yours.
+There are another customized options to you. More examples at demo/index.html
+
+Options (with defaults to exemplify):
+```
+mIpsum({
+  pNum: 1, //number of paragraphs
+  quotes: mussumQuotes, //array with at least 4 quotes
+  mainQuote: mussumMainQuote, //use to add a initial string
+  maxOfp: 9999, //define a max of element generated
+  resultType: 'html', //html or text
+  tagBefore: '<p>', //if you choose html, you can even change the tag after each paragraph
+  tagAfter: '</p>', //and before
+);
+```
 
 ____
 
