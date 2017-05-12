@@ -8,22 +8,30 @@
     <link rel="stylesheet" href="vendors/bootstrap.min.css">
     <script src="vendors/jquery.min.js"></script>
     <script src="vendors/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
     <script src="../src/mipsum.js"></script>
 
     <!-- Calls for mIpsum.js -->
     <script type="text/javascript">
       $(function(){
+        // highlight
+        $('pre code').each(function(i, block) {
+          hljs.highlightBlock(block);
+        });
+
+        // Basic use
         $('#mussumIpsumForm').on('submit', function(event) {
           event.preventDefault();
           var mussumOptions = [
-            pNum = $(this).find('.howMany').val()
+            pNum = $('#mussumIpsumForm .howMany').val()
           ];
           var mussumIpsum = window.mIpsum(mussumOptions);
           console.log(mussumIpsum);
           $('#mussum-ipsum').html(mussumIpsum);
         });
 
-        // Working on improove custom ipsum
+        // Using custom array
         $('#customForm').on('submit', function(event) {
           event.preventDefault();
           var beatlesIpsum = "Beatles Ipsum, Ob-la-di Ob-la-da. ";
@@ -78,12 +86,35 @@
             quotes = olbaDioblaDa,
             mainQuote = beatlesIpsum,
             tagBefore = '<h1>',
-            tagAfter = '</h1>',
-            resultType = 'text'
+            tagAfter = '</h1>'
           ];
           var customIpsum = window.mIpsum(customOptions);
           console.log(customIpsum);
           $('#customIpsum').html(customIpsum);
+        });
+
+        // Using tag options
+        $('#customPlusForm').on('submit', function(event) {
+          event.preventDefault();
+          var tags = $('#customPlusForm #customTag').val();
+          if (tags === 'p') {
+            var myTagBefore = '<p>', myTagAfter = '</p>';
+          } else if (tags === 'h1') {
+            var myTagBefore = '<h1>', myTagAfter = '</h1>';
+          } else if (tags === 'h2') {
+            var myTagBefore = '<h2>', myTagAfter = '</h2>';
+          } else if (tags === 'b') {
+            var myTagBefore = '<blockquote>', myTagAfter = '</blockquote>';
+          }
+          var customPlusOptions = [
+            pNum = $('#customPlusForm .howMany').val(),
+            resultType = $('#customPlusForm #customKind').val(),
+            tagBefore = myTagBefore,
+            tagAfter = myTagAfter,
+          ];
+          var customPlusIpsum = window.mIpsum(customPlusOptions);
+          console.log(customPlusIpsum);
+          $('#customPlusIpsum').html(customPlusIpsum);
         });
       });
     </script>
@@ -91,19 +122,18 @@
   <body>
 
     <div class="container">
-      <div class="col-md-offset-3 col-md-6">
         <div class="row">
           <div class="col-xs-12">
-            <h1>Example of custom use basic use</h1>
+            <h1>Example of use</h1>
           </div>
-          <form class="col-xs-12" id="mussumIpsumForm">
+          <form class="col-xs-12 col-sm-6" id="mussumIpsumForm">
             <div class="form-group">
               <label for="howMany">How many paragraphs?</label>
               <input type="number" class="form-control howMany" max="99999" value="1">
             </div>
             <div class="form-group">
               <label for="exampleInputFile">Results</label>
-              <div class="form-control" id="mussum-ipsum" style="height: auto; min-height: 100px;"></div>
+              <div class="form-control" id="mussum-ipsum" style="height: auto; min-height: 100px; max-height: 300px;"></div>
             </div>
             <div class="form-group">
               <div class="col-sm-12">
@@ -111,32 +141,135 @@
               </div>
             </div>
           </form>
+
+          <div class="col-xs-12 col-sm-6">
+<pre><code class="javascript">$(function(){
+  // Basic use
+  $('#mussumIpsumForm').on('submit', function(event) {
+    event.preventDefault();
+    var mussumOptions = [
+    pNum = $('#mussumIpsumForm .howMany').val();
+    ];
+    var mussumIpsum = window.mIpsum(mussumOptions);
+    console.log(mussumIpsum);
+    $('#mussum-ipsum').html(mussumIpsum);
+  });
+});</code></pre>
+          </div>
+
+        </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>Example of custom use</h2>
+          <h3>Changing the array of quotes for beatles songs</h3>
+        </div>
+        <form class="col-xs-12 col-sm-6" id="customForm">
+          <div class="form-group">
+            <label for="howMany">How many paragraphs?</label>
+            <input type="number" class="form-control howMany" max="9999" value="1">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputFile">Results</label>
+            <textarea class="form-control" id="customIpsum" style="height: auto; min-height: 100px; max-height: 300px;"></textarea>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-12">
+              <button type="submit" class="btn btn-default">Create</button>
+            </div>
+          </div>
+        </form>
+        <div class="col-xs-12 col-sm-6">
+<pre><code class="javascript">$(function(){
+$('#customForm').on('submit', function(event) {
+event.preventDefault();
+var beatlesIpsum = "Beatles Ipsum, Ob-la-di Ob-la-da. ";
+var olbaDioblaDa = [
+  "Desmond has a barrow in the market place",
+  "Molly is the singer in a band",
+  "Desmond says to Molly girl I like your face",
+  ... at least 4 quotes
+  "And if you want some fun",
+  "Take ob-la-di ob-la-da"
+];
+var customOptions = [
+  pNum = $('#customForm .howMany').val(),
+  quotes = olbaDioblaDa,
+  mainQuote = beatlesIpsum,
+  tagBefore = '&#60;h1&#62;',
+  tagAfter = '&#60;&#47;h1&#62;'
+];
+var customIpsum = window.mIpsum(customOptions);
+console.log(customIpsum);
+$('#customIpsum').html(customIpsum);
+});</code></pre>
         </div>
       </div>
     </div>
 
     <div class="container">
-      <div class="col-md-offset-3 col-md-6">
-        <div class="row">
-          <div class="col-xs-12">
-            <h1>Example of custom use</h1>
-            <p>Changing the array of quotes for beatles songs</p>
+      <div class="row">
+        <div class="col-xs-12">
+          <h3>Using a select to manipulate other custom options</h3>
+        </div>
+        <form class="col-xs-12 col-sm-6" id="customPlusForm">
+          <div class="form-group">
+            <label for="howMany">How many?</label>
+            <input type="number" class="form-control howMany" max="9999" value="1">
           </div>
-          <form class="col-xs-12" id="customForm">
-            <div class="form-group">
-              <label for="howMany">How many paragraphs?</label>
-              <input type="number" class="form-control howMany" max="9999" value="1">
+          <div class="form-group">
+            <label for="customTag">Which Tag?</label>
+            <select class="form-control" id="customTag">
+              <option value="p">Paragraphs &#60;p&#62;</option>
+              <option value="h1">Main Title &#60;h1&#62;</option>
+              <option value="h2">Secondary &#60;h2&#62;</option>
+              <option value="b">Quote &#60;blockquote&#62;</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="customKind">Kind of response</label>
+            <select class="form-control" id="customKind">
+              <option value="html">html</option>
+              <option value="text">text</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputFile">Results</label>
+            <textarea class="form-control" id="customPlusIpsum" style="height: auto; min-height: 100px; max-height: 300px;"></textarea>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-12">
+              <button type="submit" class="btn btn-default">Create</button>
             </div>
-            <div class="form-group">
-              <label for="exampleInputFile">Results</label>
-              <textarea class="form-control" id="customIpsum" style="height: auto; min-height: 100px;"></textarea>
-            </div>
-            <div class="form-group">
-              <div class="col-sm-12">
-                <button type="submit" class="btn btn-default">Create</button>
-              </div>
-            </div>
-          </form>
+          </div>
+        </form>
+        <div class="col-xs-12 col-sm-6">
+<pre><code class="javascript">
+$('#customPlusForm').on('submit', function(event) {
+  event.preventDefault();
+  var tags = $('#customPlusForm #customTag').val();
+  if (tags === 'p') {
+    var myTagBefore = '&#60;p&#62;', myTagAfter = '&#60;/p&#62;';
+  } else if (tags === 'h1') {
+    var myTagBefore = '&#60;h1&#62;', myTagAfter = '&#60;/h1&#62;';
+  } else if (tags === 'h2') {
+    var myTagBefore = '&#60;h2&#62;', myTagAfter = '&#60;/h2&#62;';
+  } else if (tags === 'b') {
+    var myTagBefore = '&#60;blockquote&#62;', myTagAfter = '&#60;/blockquote&#62;';
+  }
+  var customPlusOptions = [
+    pNum = $('#customPlusForm .howMany').val(),
+    resultType = $('#customPlusForm #customKind').val(),
+    tagBefore = myTagBefore,
+    tagAfter = myTagAfter,
+  ];
+  var customPlusIpsum = window.mIpsum(customPlusOptions);
+  console.log(customPlusIpsum);
+  $('#customPlusIpsum').html(customPlusIpsum);
+});
+</code></pre>
         </div>
       </div>
     </div>

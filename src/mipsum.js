@@ -54,6 +54,7 @@ var options = [
   tagBefore = '<p>',
   tagAfter = '</p>'
 ];
+
 var mIpsum = function(options){
   /* Function to sort a number
   ----------------- > */
