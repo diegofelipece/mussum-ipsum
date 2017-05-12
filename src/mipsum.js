@@ -1,5 +1,5 @@
 /* ---------------
-mipsum.js v2.0.6
+mipsum.js v2.1.1
 --------------- */
 var mussumMainQuote = "Mussum Ipsum, cacilds vidis litro abertis. ";
 var mussumQuotes = [
@@ -45,17 +45,39 @@ var mussumQuotes = [
   "Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum. "
 ];
 
-var options = [
-  pNum = 1,
-  quotes = mussumQuotes,
-  mainQuote = mussumMainQuote,
-  maxOfp = 9999,
-  resultType = 'html',
-  tagBefore = '<p>',
-  tagAfter = '</p>'
-];
-
 var mIpsum = function(options){
+  var defaults = {
+    pNum: 1,
+    quotes: mussumQuotes,
+    mainQuote: mussumMainQuote,
+    maxOfp: 9999,
+    resultType: 'html',
+    tagBefore: '<p>',
+    tagAfter: '</p>',
+  };
+
+  var extend = function(out) {
+    out = out || {};
+    for (var i = 1; i < arguments.length; i++) {
+      if (!arguments[i])
+        continue;
+      for (var key in arguments[i]) {
+        if (arguments[i].hasOwnProperty(key))
+          out[key] = arguments[i][key];
+      }
+    }
+    return out;
+  };
+
+  var $o = extend({}, defaults, options);
+  var pNum = $o.pNum,
+      quotes = $o.quotes,
+      mainQuote = $o.mainQuote,
+      maxOfp = $o.maxOfp,
+      resultType = $o.resultType,
+      tagBefore = $o.tagBefore,
+      tagAfter = $o.tagAfter;
+
   /* Function to sort a number
   ----------------- > */
   var n, min = 1, max;

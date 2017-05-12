@@ -20,13 +20,15 @@
           hljs.highlightBlock(block);
         });
 
+        // Onload
+        $('#blockquote').html(mIpsum());
+
         // Basic use
         $('#mussumIpsumForm').on('submit', function(event) {
           event.preventDefault();
-          var mussumOptions = [
-            pNum = $('#mussumIpsumForm .howMany').val()
-          ];
-          var mussumIpsum = window.mIpsum(mussumOptions);
+          var mussumIpsum = window.mIpsum({
+            pNum: $('#mussumIpsumForm .howMany').val()
+          });
           console.log(mussumIpsum);
           $('#mussum-ipsum').html(mussumIpsum);
         });
@@ -81,19 +83,26 @@
             "And if you want some fun",
             "Take ob-la-di ob-la-da"
           ];
-          var customOptions = [
-            pNum = $('#customForm .howMany').val(),
-            quotes = olbaDioblaDa,
-            mainQuote = beatlesIpsum,
-            tagBefore = '<h1>',
-            tagAfter = '</h1>'
-          ];
-          var customIpsum = window.mIpsum(customOptions);
+          var customIpsum = window.mIpsum({
+            pNum: $('#customForm .howMany').val(),
+            quotes: olbaDioblaDa,
+            mainQuote: beatlesIpsum,
+            tagBefore: '<h1>',
+            tagAfter: '</h1>'
+          });
           console.log(customIpsum);
           $('#customIpsum').html(customIpsum);
         });
 
         // Using tag options
+        $('#customKind').on('change', function(event) {
+          event.preventDefault();
+          if ($(this).val() === 'html' ) {
+            $('#customPlusForm #customTag').removeAttr('disabled');
+          } else{
+            $('#customPlusForm #customTag').attr('disabled', 'disabled');
+          }
+        });
         $('#customPlusForm').on('submit', function(event) {
           event.preventDefault();
           var tags = $('#customPlusForm #customTag').val();
@@ -106,13 +115,12 @@
           } else if (tags === 'b') {
             var myTagBefore = '<blockquote>', myTagAfter = '</blockquote>';
           }
-          var customPlusOptions = [
-            pNum = $('#customPlusForm .howMany').val(),
-            resultType = $('#customPlusForm #customKind').val(),
-            tagBefore = myTagBefore,
-            tagAfter = myTagAfter,
-          ];
-          var customPlusIpsum = window.mIpsum(customPlusOptions);
+          var customPlusIpsum = window.mIpsum({
+            pNum: $('#customPlusForm .howMany').val(),
+            resultType: $('#customPlusForm #customKind').val(),
+            tagBefore: myTagBefore,
+            tagAfter: myTagAfter,
+          });
           console.log(customPlusIpsum);
           $('#customPlusIpsum').html(customPlusIpsum);
         });
@@ -124,7 +132,22 @@
     <div class="container">
         <div class="row">
           <div class="col-xs-12">
-            <h1>Example of use</h1>
+            <h1>mIpsum - examples of use</h1>
+            <p>This is the more basic version ever. 1 paragraph of <a href="http://mussumipsum.com" target="_blank">Mussum Ipsum</a> when document is ready.</p>
+            <blockquote id="blockquote"></blockquote>
+          </div>
+          <div class="col-xs-12">
+            <pre><code class="javascript">$(function(){
+  $('#blockquote').html(mIpsum());
+});</code></pre>
+          </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <h1>Basic use with form request</h1>
           </div>
           <form class="col-xs-12 col-sm-6" id="mussumIpsumForm">
             <div class="form-group">
@@ -133,7 +156,7 @@
             </div>
             <div class="form-group">
               <label for="exampleInputFile">Results</label>
-              <div class="form-control" id="mussum-ipsum" style="height: auto; min-height: 100px; max-height: 300px;"></div>
+              <div class="form-control" id="mussum-ipsum" style="height: auto; min-height: 100px; max-height: 300px; overflow-y:scroll;"></div>
             </div>
             <div class="form-group">
               <div class="col-sm-12">
@@ -144,14 +167,11 @@
 
           <div class="col-xs-12 col-sm-6">
 <pre><code class="javascript">$(function(){
-  // Basic use
   $('#mussumIpsumForm').on('submit', function(event) {
     event.preventDefault();
-    var mussumOptions = [
-    pNum = $('#mussumIpsumForm .howMany').val();
-    ];
-    var mussumIpsum = window.mIpsum(mussumOptions);
-    console.log(mussumIpsum);
+    var mussumIpsum = window.mIpsum({
+      pNum: $('#mussumIpsumForm .howMany').val()
+    });
     $('#mussum-ipsum').html(mussumIpsum);
   });
 });</code></pre>
@@ -183,27 +203,25 @@
         </form>
         <div class="col-xs-12 col-sm-6">
 <pre><code class="javascript">$(function(){
-$('#customForm').on('submit', function(event) {
-event.preventDefault();
-var beatlesIpsum = "Beatles Ipsum, Ob-la-di Ob-la-da. ";
-var olbaDioblaDa = [
-  "Desmond has a barrow in the market place",
-  "Molly is the singer in a band",
-  "Desmond says to Molly girl I like your face",
-  ... at least 4 quotes
-  "And if you want some fun",
-  "Take ob-la-di ob-la-da"
-];
-var customOptions = [
-  pNum = $('#customForm .howMany').val(),
-  quotes = olbaDioblaDa,
-  mainQuote = beatlesIpsum,
-  tagBefore = '&#60;h1&#62;',
-  tagAfter = '&#60;&#47;h1&#62;'
-];
-var customIpsum = window.mIpsum(customOptions);
-console.log(customIpsum);
-$('#customIpsum').html(customIpsum);
+  $('#customForm').on('submit', function(event) {
+    event.preventDefault();
+    var beatlesIpsum = "Beatles Ipsum, Ob-la-di Ob-la-da. ";
+    var olbaDioblaDa = [
+      "Desmond has a barrow in the market place",
+      "Molly is the singer in a band",
+      ... at least 4 quotes
+      "And if you want some fun",
+      "Take ob-la-di ob-la-da"
+    ];
+    var customIpsum = window.mIpsum({
+      pNum: $('#customForm .howMany').val(),
+      quotes: olbaDioblaDa,
+      mainQuote: beatlesIpsum,
+      tagBefore = '&#60;h1&#62;',
+      tagAfter = '&#60;&#47;h1&#62;'
+    });
+    $('#customIpsum').html(customIpsum);
+  });
 });</code></pre>
         </div>
       </div>
@@ -220,19 +238,19 @@ $('#customIpsum').html(customIpsum);
             <input type="number" class="form-control howMany" max="9999" value="1">
           </div>
           <div class="form-group">
+            <label for="customKind">Kind of response</label>
+            <select class="form-control" id="customKind">
+              <option value="html">html</option>
+              <option value="text">text</option>
+            </select>
+          </div>
+          <div class="form-group">
             <label for="customTag">Which Tag?</label>
             <select class="form-control" id="customTag">
               <option value="p">Paragraphs &#60;p&#62;</option>
               <option value="h1">Main Title &#60;h1&#62;</option>
               <option value="h2">Secondary &#60;h2&#62;</option>
               <option value="b">Quote &#60;blockquote&#62;</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="customKind">Kind of response</label>
-            <select class="form-control" id="customKind">
-              <option value="html">html</option>
-              <option value="text">text</option>
             </select>
           </div>
           <div class="form-group">
@@ -247,28 +265,34 @@ $('#customIpsum').html(customIpsum);
         </form>
         <div class="col-xs-12 col-sm-6">
 <pre><code class="javascript">
-$('#customPlusForm').on('submit', function(event) {
-  event.preventDefault();
-  var tags = $('#customPlusForm #customTag').val();
-  if (tags === 'p') {
-    var myTagBefore = '&#60;p&#62;', myTagAfter = '&#60;/p&#62;';
-  } else if (tags === 'h1') {
-    var myTagBefore = '&#60;h1&#62;', myTagAfter = '&#60;/h1&#62;';
-  } else if (tags === 'h2') {
-    var myTagBefore = '&#60;h2&#62;', myTagAfter = '&#60;/h2&#62;';
-  } else if (tags === 'b') {
-    var myTagBefore = '&#60;blockquote&#62;', myTagAfter = '&#60;/blockquote&#62;';
-  }
-  var customPlusOptions = [
-    pNum = $('#customPlusForm .howMany').val(),
-    resultType = $('#customPlusForm #customKind').val(),
-    tagBefore = myTagBefore,
-    tagAfter = myTagAfter,
-  ];
-  var customPlusIpsum = window.mIpsum(customPlusOptions);
-  console.log(customPlusIpsum);
-  $('#customPlusIpsum').html(customPlusIpsum);
-});
+  $('#customKind').on('change', function(event) {
+    event.preventDefault();
+    if ($(this).val() === 'html' ) {
+      $('#customPlusForm #customTag').removeAttr('disabled');
+    } else{
+      $('#customPlusForm #customTag').attr('disabled', 'disabled');
+    }
+  });
+  $('#customPlusForm').on('submit', function(event) {
+    event.preventDefault();
+    var tags = $('#customPlusForm #customTag').val();
+    if (tags === 'p') {
+      var myTagBefore = '&#60;p&#62;', myTagAfter = '&#60;/p&#62;';
+    } else if (tags === 'h1') {
+      var myTagBefore = '&#60;h1&#62;', myTagAfter = '&#60;/h1&#62;';
+    } else if (tags === 'h2') {
+      var myTagBefore = '&#60;h2&#62;', myTagAfter = '&#60;/h2&#62;';
+    } else if (tags === 'b') {
+      var myTagBefore = '&#60;blockquote&#62;', myTagAfter = '&#60;/blockquote&#62;';
+    }
+    var customPlusIpsum = window.mIpsum({
+      pNum: $('#customPlusForm .howMany').val(),
+      resultType: $('#customPlusForm #customKind').val(),
+      tagBefore: myTagBefore,
+      tagAfter: myTagAfter,
+    });
+    $('#customPlusIpsum').html(customPlusIpsum);
+  });
 </code></pre>
         </div>
       </div>

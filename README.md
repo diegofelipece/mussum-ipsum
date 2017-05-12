@@ -1,4 +1,4 @@
-# mIpsum v2.0.6
+# mIpsum v2.1.1
 
 This is a Javascript lorem ipsum generator, created for [mussumipsum.com](http://mussumipsum.com), a brasilian dummy text generator.
 
