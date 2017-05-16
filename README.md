@@ -1,22 +1,22 @@
 # mIpsum v2.1.1
 
-This is a Javascript lorem ipsum generator, created for [mussumipsum.com](http://mussumipsum.com), a brasilian dummy text generator. You can use it to develop anything that concern Mussum Ipsum (like a plugin for Sublime or Atom or whatever), or to create your own customized Lorem Ipsum.
+This is a Javascript Lorem Ipsum generator, created for [mussumipsum.com](http://mussumipsum.com), a brasilian dummy text generator. You can use it to develope anything that concern Mussum Ipsum (like a plugin for Sublime or Atom or whatever), or to create your own customized Lorem Ipsum.
 
 ____
 
-Add it to your projetc using Bower or just download code.
+Add it to your project using **Bower** or just download the code.
 
 ``` bash
-bower install mipsum --save-dev
+bower install mipsum --save
 ```
 
-Just add mipsum.min.js to your project and add a call via JS.
+Just add **mipsum.min.js** to your project and add a call via JS.
 
 ``` html
 <script src="path/to/mipsum.min.js"></script>
 ```
 
-mIpsum was created using plane Javascript (ES2015), to allow you to decide if you want to include it in a jQuery context for example:
+mIpsum was created using plane Javascript (ES2015), to allow you to decide if you want to include it in any context, even jQuery for example:
 
 ``` javascript
 $(function(){
@@ -26,15 +26,15 @@ $(function(){
 });
 ```
 
-There are another customized options to you. More examples at demo/index.html
+There are another customized options to you. More examples at **demo/index.html**
 
 Options (with defaults to exemplify):
 ``` javascript
 mIpsum({
   pNum: 1, //number of paragraphs
   quotes: mussumQuotes, //array with at least 4 quotes
-  mainQuote: mussumMainQuote, //use to add a initial string
-  maxOfp: 9999, //define a max of element generated
+  mainQuote: mussumMainQuote, //use it to add a initial string
+  maxOfp: 9999, //define a limit of elements to be generated
   resultType: 'html', //html or text
   tagBefore: '<p>', //if you choose html, you can even change the tag after each paragraph
   tagAfter: '</p>', //and before
