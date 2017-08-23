@@ -1,4 +1,4 @@
-# mIpsum v2.1.1
+# mIpsum v2.2.0
 
 This is a Javascript Lorem Ipsum generator, created for [mussumipsum.com](http://mussumipsum.com), a brasilian dummy text generator. You can use it to develope anything that concern Mussum Ipsum (like a plugin for Sublime or Atom or whatever), or to create your own customized Lorem Ipsum.
 
@@ -22,7 +22,7 @@ mIpsum was created using plane Javascript (ES2015), to allow you to decide if yo
 $(function(){
   var mussumIpsum = window.mIpsum({pNum: 10}); //How many paragraphs do you want
   $('body').append('<div id="mussum-ipsum">'+mussumIpsum+'</div>');
-  // This will add to thw body of the documment a div with 10 paragraphs. 
+  // This will add to thw body of the documment a div with 10 paragraphs.
 });
 ```
 
@@ -31,13 +31,14 @@ There are another customized options to you. More examples at **demo/index.html*
 Options (with defaults to exemplify):
 ``` javascript
 mIpsum({
-  pNum: 1, //number of paragraphs
-  quotes: mussumQuotes, //array with at least 4 quotes
-  mainQuote: mussumMainQuote, //use it to add a initial string
-  maxOfp: 9999, //define a limit of elements to be generated
-  resultType: 'html', //html or text
-  tagBefore: '<p>', //if you choose html, you can even change the tag after each paragraph
-  tagAfter: '</p>', //and before
+  pNum: 1, //number of paragraphs requested
+  quotes: mussumQuotes, //array of quotes to generate paragraphs
+  mainQuote: mussumMainQuote, //main quote to start your "Lorem Ipsum"
+  genLimit: 1000, //limit of paragraphs that can be requested
+  resultType: 'html', //format of the response: html or text
+  tagBefore: '<p>', //anything you want to put before each paragraph
+  tagAfter: '</p>', //anything you want to put after each paragraph
+  pQuotes: 4 //number of quotes used to build a paragraph
 );
 ```
 

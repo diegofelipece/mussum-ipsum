@@ -179,17 +179,17 @@
     <link rel="stylesheet" href="vendors/bootstrap.min.css">
     <script src="vendors/jquery.min.js"></script>
     <script src="vendors/bootstrap.min.js"></script>
-<!--     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script> -->
+    <link rel="stylesheet" href="vendors/highlight.min.css">
+    <script src="vendors/highlight.min.js"></script> -->
     <script src="../src/mipsum.js"></script>
 
     <!-- Calls for mIpsum.js -->
     <script type="text/javascript">
       $(function(){
         // highlight
-        // $('pre code').each(function(i, block) {
-        //   hljs.highlightBlock(block);
-        // });
+        $('pre code').each(function(i, block) {
+          hljs.highlightBlock(block);
+        });
 
         // Onload
         $('#blockquote').html(mIpsum());
