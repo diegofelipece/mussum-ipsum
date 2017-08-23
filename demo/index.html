@@ -179,80 +179,20 @@
     <link rel="stylesheet" href="vendors/bootstrap.min.css">
     <script src="vendors/jquery.min.js"></script>
     <script src="vendors/bootstrap.min.js"></script>
-<!--     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
-<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script> -->
+<!--     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script> -->
     <script src="../src/mipsum.js"></script>
 
     <!-- Calls for mIpsum.js -->
     <script type="text/javascript">
-    var beatlesIpsum = "Beatles Ipsum, Ob-la-di Ob-la-da. ";
-    var olbaDioblaDa = [
-      "Desmond has a barrow in the market place",
-      "Molly is the singer in a band",
-      "Desmond says to Molly girl I like your face",
-      "And Molly says this as she takes him by the hand",
-      "Ob-la-di ob-la-da life goes on bra",
-      "La-la how the life goes on",
-      "Ob-la-di ob-la-da life goes on bra",
-      "La-la how the life goes on",
-      "Desmond takes a trolley to the jewellers stores",
-      "Buys a twenty carat golden ring (Golden ring?)",
-      "Takes it back to Molly waiting at the door",
-      "And as he gives it to her she begins to sing (Sing)",
-      "Ob-la-di ob-la-da life goes on bra",
-      "La-la how the life goes on",
-      "Ob-la-di ob-la-da life goes on bra",
-      "La-la how the life goes on, yeah (No)",
-      "In a couple of years they have built",
-      "A home sweet home",
-      "With a couple of kids running in the yard",
-      "Of Desmond and Molly Jones",
-      "(Ah ha ha ha ha ha)",
-      "Happy ever after in the market place",
-      "Desmond let's the children lend a hand (Arm! Leg!)",
-      "Molly stays at home and does her pretty face",
-      "And in the evening she's a singer with the band",
-      "Yes, ob-la-di ob-la-da life goes on bra",
-      "La-la how the life goes on (Ha ha ha)",
-      "Hey, ob-la-di ob-la-da life goes on bra",
-      "La-la how the life goes on",
-      "In a couple of years they have built",
-      "A home sweet home",
-      "Of Desmond and Molly Jones",
-      "(Ha ha ha ha ha ha ha ha ha ha)",
-      "Yeah, happy ever after in the market place",
-      "Molly let's the children lend a hand (Foot!)",
-      "Desmond stays at home and does his pretty face",
-      "And in the evening she's a singer with the band",
-      "Of Desmond and Molly Jones",
-      "(Ha ha ha ha ha ha ha ha ha ha)",
-      "Yeah, happy ever after in the market place",
-      "Molly let's the children lend a hand (Foot!)",
-      "Desmond stays at home and does his pretty face",
-      "And in the evening she's a singer with the band",
-      "Yeah, ob-la-di ob-la-da life goes on bra",
-      "La-la how the life goes on",
-      "Yeah, ob-la-di ob-la-da life goes on bra",
-      "La-la how the life goes on",
-      "And if you want some fun",
-      "Take ob-la-di ob-la-da"
-    ];
-    var customIpsum = window.mIpsum({
-      pNum: 11,
-      tagBefore: '<h1>',
-      tagAfter: '</h1>'
-    });
-    // console.log(customIpsum);
-
-
       $(function(){
         // highlight
         // $('pre code').each(function(i, block) {
-          // hljs.highlightBlock(block);
+        //   hljs.highlightBlock(block);
         // });
 
         // Onload
-        // $('#blockquote').html(mIpsum());
+        $('#blockquote').html(mIpsum());
 
         // Basic use
         $('#mussumIpsumForm').on('submit', function(event) {
@@ -321,7 +261,7 @@
             tagBefore: '<h1>',
             tagAfter: '</h1>'
           });
-          // console.log(customIpsum);
+          console.log(customIpsum);
           $('#customIpsum').html(customIpsum);
         });
 
@@ -357,6 +297,5 @@
         });
       });
     </script>
-
   </body>
 </html>

@@ -47,33 +47,37 @@ var mussumQuotes = [
 
 var mIpsum = function(options){
   const defaults = {
-    pNum: 1,
-    quotes: mussumQuotes,
-    mainQuote: mussumMainQuote,
-    maxOfp: 1000,
-    resultType: 'html',
-    tagBefore: '<p>',
-    tagAfter: '</p>',
-    quotesOnParagraph: 4
+    pNum: 1, //number of paragraphs requested
+    quotes: mussumQuotes, //array of quotes to generate paragraphs
+    mainQuote: mussumMainQuote, //main quote to start your "Lorem Ipsum"
+    genLimit: 1000, //limit of paragraphs that can be requested
+    resultType: 'html', //format of the response: html or text
+    tagBefore: '<p>', //anything you want to put before each paragraph
+    tagAfter: '</p>', //anything you want to put after each paragraph
+    pQuotes: 4 //number of quotes used to build a paragraph
   };
 
   /* Define options
   ----------------- > */
-  let $o = JSON.parse(JSON.stringify(defaults));
+  let opt = JSON.parse(JSON.stringify(defaults));
   if (options) {
-    Object.keys(options).forEach(option => $o[option] = options[option]);
+    Object.keys(options).forEach(option => opt[option] = options[option]);
+    let error = errorHandler(opt);
+    if (error){
+      throw new Error(error);
+    }
   }
 
   /* Create
   ----------------- > */
-  var createParagraphs = function(pNum, quotes) {
-    let limit = Math.floor($o.quotes.length/$o.quotesOnParagraph);
+  function createParagraphs(pNum, quotes) {
+    let limit = Math.floor(opt.quotes.length/opt.pQuotes);
     let roundsNeeded = Math.ceil(pNum/limit);
 
     let tempParagraphs = [];
     for (var i = 0; i < roundsNeeded; i++) {
       for (let i = 0; i < limit; i++) {
-        tempParagraphs.push(createOneParagraph($o.quotes));
+        tempParagraphs.push(createOneParagraph(opt.quotes));
       }
     }
 
@@ -84,40 +88,36 @@ var mIpsum = function(options){
       }
     });
 
-    function createOneParagraph(tempQuotes){
-
-      let singleParagraph = '';
-      var tempQuotes = [].concat($o.quotes);
-      var randomLimit = tempQuotes.length;
-
-      for (var i = 0; i < $o.quotesOnParagraph; i++) {
-
-        let thisPosition = Math.round(Math.random() * (randomLimit - 1) + 1) -1; //get a random position
-        singleParagraph += `${tempQuotes[thisPosition]} `;// append the quote on a temp string
-        tempQuotes.splice(thisPosition, 1); //exlude the used value for the array
-        randomLimit --; //decrease max getRandomNumber
-      }
-      return singleParagraph;
-    }
 
     return paragraphs;
+  };
+
+  function createOneParagraph(tempQuotes){
+
+    let singleParagraph = '';
+    var tempQuotes = [].concat(opt.quotes);
+    var randomLimit = tempQuotes.length;
+
+    for (var i = 0; i < opt.pQuotes; i++) {
+
+      let thisPosition = Math.round(Math.random() * (randomLimit - 1) + 1) -1; //get a random position
+      singleParagraph += `${tempQuotes[thisPosition]} `;// append the quote on a temp string
+      tempQuotes.splice(thisPosition, 1); //exlude the used value for the array
+      randomLimit --; //decrease max getRandomNumber
+    }
+    return singleParagraph;
   };
 
   /* Generate view
   ----------------- > */
   function generateView(paragraphs){
     let view = '';
-
-    function useHtml(){
-      if ($o.resultType === 'html') return true;
-    };
-
-    paragraphs[0] = `${$o.mainQuote} ${paragraphs[0]}`; // add the initial quote
+    paragraphs[0] = `${opt.mainQuote} ${paragraphs[0]}`; // add the initial quote
 
     paragraphs.forEach((paragraph, index) => {
 
-      if (useHtml()) {
-        view += `${$o.tagBefore}${paragraph} ${$o.tagAfter}`;
+      if (opt.resultType === 'html') {
+        view += `${opt.tagBefore}${paragraph} ${opt.tagAfter}`;
       } else{
         view += `${paragraph} \n\n`;
       }
@@ -127,30 +127,19 @@ var mIpsum = function(options){
     return view;
   };
 
-  if (errorHandler()) {
-    return generateView(createParagraphs($o.pNum, $o.quotes));
+  return generateView(createParagraphs(opt.pNum, opt.quotes));
+};
+
+let errorHandler = function(opt){
+  if (opt.pNum > opt.genLimit) {
+    return `Your request of ${opt.pNum} paragraphs, is larger than the defined limit: ${opt.genLimit}. You can change that limit using the key 'genLimit' on your options object.`;
   }
-
-  function errorHandler(){
-    if ($o.pNum <= $o.maxOfp) {
-      if ($o.quotes.length >= $o.quotesOnParagraph) {
-
-        if ($o.resultType === 'html' || $o.resultType === 'text') {
-
-          return true;
-        } else{
-          throw new Error(`The value '${$o.resultType}' given to 'resultType' is not accepted. Choose between: html or text.`);
-          return false;
-        }
-      } else{
-        throw new Error(`Your array have only ${$o.quotes.length} quotes, you need at least ${$o.quotesOnParagraph} quotes to have results.`);
-        return false;
-      }
-    } else{
-      throw new Error(`Your request of ${$o.pNum} paragraphs, is larger than the defined limit: ${$o.maxOfp}. You can change that limit using the key 'maxOfp' on your options object.`);
-      return false;
-    }
-  };
+  if (opt.quotes.length < opt.pQuotes) {
+    return `Your array have only ${opt.quotes.length} quotes, you need at least ${opt.pQuotes} quotes to have results.`;
+  }
+  if (!opt.resultType === 'html' || !opt.resultType === 'text') {
+    return `The value '${opt.resultType}' given to 'resultType' is not accepted. Choose between: html or text.`;
+  }
 };
 
 window.mIpsum = mIpsum;
