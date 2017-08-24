@@ -1,8 +1,8 @@
 /* ---------------
-mipsum.js v2.2.0
+mipsum.js v2.2.2
 --------------- */
-var mussumMainQuote = "Mussum Ipsum, cacilds vidis litro abertis.";
-var mussumQuotes = [
+const mussumMainQuote = "Mussum Ipsum, cacilds vidis litro abertis.";
+const mussumQuotes = [
   "Pra lá , depois divoltis porris, paradis.",
   "Paisis, filhis, espiritis santis.",
   "Mé faiz elementum girarzis, nisi eros vermeio.",
@@ -57,8 +57,7 @@ var mIpsum = function(options){
     pQuotes: 4 //number of quotes used to build a paragraph
   };
 
-  /* Define options
-  ----------------- > */
+  /* Define options ---- > */
   let opt = JSON.parse(JSON.stringify(defaults));
   if (options) {
     Object.keys(options).forEach(option => opt[option] = options[option]);
@@ -68,31 +67,22 @@ var mIpsum = function(options){
     }
   }
 
-  /* Create
-  ----------------- > */
-  function createParagraphs(pNum, quotes) {
+  /* Create ---- > */
+  function createParagraphs(opt) {
+    let paragraphs = [];
     let limit = Math.floor(opt.quotes.length/opt.pQuotes);
-    let roundsNeeded = Math.ceil(pNum/limit);
+    let roundsNeeded = Math.ceil(opt.pNum/limit);
 
     let tempParagraphs = [];
-    for (var i = 0; i < roundsNeeded; i++) {
-      for (let i = 0; i < limit; i++) {
-        tempParagraphs.push(createOneParagraph(opt.quotes));
-      }
+    for (let i = 0; i < roundsNeeded*limit; i++) {
+      tempParagraphs.push(createOneParagraph(opt));
     }
 
-    let paragraphs = [];
-    tempParagraphs.forEach((paragraph, i)=>{
-      if (pNum > i) {
-        paragraphs.push(paragraph);
-      }
-    });
-
-
+    tempParagraphs.forEach((paragraph, i) => { if (opt.pNum > i) paragraphs.push(paragraph)});
     return paragraphs;
   };
 
-  function createOneParagraph(tempQuotes){
+  function createOneParagraph(opt){
 
     let singleParagraph = '';
     var tempQuotes = [].concat(opt.quotes);
@@ -108,29 +98,29 @@ var mIpsum = function(options){
     return singleParagraph;
   };
 
-  /* Generate view
-  ----------------- > */
+  /* Generate view ---- > */
   function generateView(paragraphs){
     let view = '';
     paragraphs[0] = `${opt.mainQuote} ${paragraphs[0]}`; // add the initial quote
 
     paragraphs.forEach((paragraph, index) => {
-
       if (opt.resultType === 'html') {
         view += `${opt.tagBefore}${paragraph} ${opt.tagAfter}`;
       } else{
         view += `${paragraph} \n\n`;
       }
-
     });
 
     return view;
   };
 
-  return generateView(createParagraphs(opt.pNum, opt.quotes));
+  return generateView(createParagraphs(opt));
 };
 
 let errorHandler = function(opt){
+  if (opt.pNum <= 0 || !opt.pNum === '') {
+    return `Is not possible to create 0 paragraphs.`;
+  }
   if (opt.pNum > opt.genLimit) {
     return `Your request of ${opt.pNum} paragraphs, is larger than the defined limit: ${opt.genLimit}. You can change that limit using the key 'genLimit' on your options object.`;
   }
