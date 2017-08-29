@@ -22,7 +22,7 @@ mIpsum was created using plane Javascript (ES2015 and beyond), to allow you to d
 $(function(){
   var mussumIpsum = mIpsum({pNum: 10}); //How many paragraphs do you want
   $('body').append('<div id="mussum-ipsum">'+mussumIpsum+'</div>');
-  // This will add to thw body of the documment a div with 10 paragraphs.
+  // This will add to the body of the documment a div with 10 paragraphs.
 });
 ```
 
