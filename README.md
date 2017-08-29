@@ -45,5 +45,3 @@ mIpsum({
 ____
 
 Created by [Diego Esteves](http://diegoesteves.ink) under The MIT License (MIT)
-
-Copyright © 2016 Diego Esteves <diegofelipece@gmail.com>
