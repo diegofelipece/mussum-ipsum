@@ -6,7 +6,7 @@ var	concat 		    = require('gulp-concat');
 var babel         = require('gulp-babel');
 var runSeq        = require('run-sequence');
 
-var src = 'src/mipsum.js'
+var src  = 'src/mipsum.js',
     dist = 'dist';
 
 // Files
