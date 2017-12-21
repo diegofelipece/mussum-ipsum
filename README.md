@@ -41,6 +41,11 @@ mIpsum({
   pQuotes: 4 //number of quotes used to build a paragraph
 );
 ```
+____
+
+## Related Projects
+
+[Mussum Ipsum REST API](https://github.com/wilkerHop/mussum-ipsum-api)
 
 ____
 
