@@ -28,19 +28,34 @@ $(function(){
 
 There are another customized options to you. More examples at **demo/index.html**
 
-Options (with defaults to exemplify):
+###Options###
+
+Key | Type | Default | Description
+--- | --- | --- | ---
+pNum | Number | 1 | Number of paragraphs requested
+quotes | Array | mussumQuotes | Array of quotes to generate paragraphs
+mainQuote | String | mussumMainQuote | Main quote to start your "Lorem Ipsum"
+genLimit | Number | 1000 | Limit of paragraphs that can be requested
+resultType | String | 'html'| Format of the response, choose between: 'html' or 'text'
+tagBefore | String | '<p>' | Anything you want to put before each paragraph
+tagAfter | String | '</p>' | Anything you want to put after each paragraph
+pQuotes | Number | 4 | Number of quotes used to build a paragraph
+
+The options can be set on an object passed as a parameter, like the example above:
+
 ``` javascript
 mIpsum({
-  pNum: 1, //number of paragraphs requested
-  quotes: mussumQuotes, //array of quotes to generate paragraphs
-  mainQuote: mussumMainQuote, //main quote to start your "Lorem Ipsum"
-  genLimit: 1000, //limit of paragraphs that can be requested
-  resultType: 'html', //format of the response: html or text
-  tagBefore: '<p>', //anything you want to put before each paragraph
-  tagAfter: '</p>', //anything you want to put after each paragraph
-  pQuotes: 4 //number of quotes used to build a paragraph
+  pNum: 1,
+  quotes: mussumQuotes,
+  mainQuote: mussumMainQuote,
+  genLimit: 1000,
+  resultType: 'html',
+  tagBefore: '<p>',
+  tagAfter: '</p>',
+  pQuotes: 4
 );
 ```
+
 ____
 
 ## Related Projects
