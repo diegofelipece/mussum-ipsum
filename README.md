@@ -53,7 +53,7 @@ mIpsum({
   tagBefore: '<p>',
   tagAfter: '</p>',
   pQuotes: 4
-);
+});
 ```
 
 ____
