@@ -1,6 +1,6 @@
 # mIpsum v2.2.2
 
-This is a Javascript Lorem Ipsum generator, created for [mussumipsum.com](http://mussumipsum.com), a brasilian dummy text generator. You can use it to develop anything that concern Mussum Ipsum (like a plugin for Sublime or Atom or whatever), or to create your own customized Lorem Ipsum.
+This is a Javascript Lorem Ipsum generator, created for [mussumipsum.com](http://mussumipsum.com), a brazilian dummy text generator. You can use it to develop anything that concerns Mussum Ipsum (like a plugin for Sublime or Atom or whatever), or to create your own customized Lorem Ipsum.
 
 ____
 
@@ -26,7 +26,7 @@ $(function(){
 });
 ```
 
-There are another customized options to you. More examples at **demo/index.html**
+There are other customized options available to you. More examples at **demo/index.html**
 
 ### Options
 
@@ -41,7 +41,7 @@ tagBefore | String | `'<p>'` | Anything you want to put before each paragraph
 tagAfter | String | `'</p>'` | Anything you want to put after each paragraph
 pQuotes | Number | 4 | Number of quotes used to build a paragraph
 
-The options can be set on an object passed as a parameter, like the example above:
+The options can be set on an object passed as a parameter, like the example below:
 
 ``` javascript
 mIpsum({
