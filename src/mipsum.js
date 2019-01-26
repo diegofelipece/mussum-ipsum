@@ -14,7 +14,7 @@ const mussumQuotes = [
   "Casamentiss faiz malandris se pirulitá.",
   "Cevadis im ampola pa arma uma pindureta.",
   "Atirei o pau no gatis, per gatis num morreus.",
-  "Viva Forevis aptent taciti sociosqu ad litora torquent.",
+  "Viva forevis aptent taciti sociosqu ad litora torquent.",
   "Copo furadis é disculpa de bebadis, arcu quam euismod magna.",
   "Delegadis gente finis, bibendum egestas augue arcu ut est.",
   "In elementis mé pra quem é amistosis quis leo.",
@@ -27,7 +27,7 @@ const mussumQuotes = [
   "Si num tem leite então bota uma pinga aí cumpadi!",
   "Diuretics paradis num copo é motivis de denguis.",
   "Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.",
-  "A ordem dos tratores não altera o pão duris.",
+  "A ordem dos tratoris não altera o pão duris.",
   "Quem num gosta di mim que vai caçá sua turmis!",
   "Quem num gosta di mé, boa gentis num é.",
   "Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!",
@@ -38,11 +38,14 @@ const mussumQuotes = [
   "Aenean aliquam molestie leo, vitae iaculis nisl.",
   "Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget.",
   "Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi.",
-  "Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum felis.",
+  "Nec orci ornare consequat. Praesent lacinia ultricis consectetur. Sed non ipsum felis.",
   "Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus.",
   "Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio.",
   "Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl.",
-  "Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum."
+  "Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum.",
+  "Etiam mattis velit gravidis liberis lobortis dictum non forevis.",
+  "Morbis dictuns di volutpatis mollis." ,
+  "Mauris loboris nun gostis, prefiris cachacis."
 ];
 
 var mIpsum = function(options){
