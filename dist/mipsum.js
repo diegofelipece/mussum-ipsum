@@ -1,100 +1,113 @@
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/mipsum.js");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./src/lib/quotes.js":
+/*!***************************!*\
+  !*** ./src/lib/quotes.js ***!
+  \***************************/
+/*! exports provided: mussumMainQuote, mussumQuotes */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"mussumMainQuote\", function() { return mussumMainQuote; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"mussumQuotes\", function() { return mussumQuotes; });\nvar mussumMainQuote = \"Mussum Ipsum, cacilds vidis litro abertis.\";\nvar mussumQuotes = [\"Pra lá , depois divoltis porris, paradis.\", \"Paisis, filhis, espiritis santis.\", \"Mé faiz elementum girarzis, nisi eros vermeio.\", \"Manduma pindureta quium dia nois paga.\", \"Sapien in monti palavris qui num significa nadis i pareci latim.\", \"Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.\", \"Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.\", \"Interagi no mé, cursus quis, vehicula ac nisi.\", \"Casamentiss faiz malandris se pirulitá.\", \"Cevadis im ampola pa arma uma pindureta.\", \"Atirei o pau no gatis, per gatis num morreus.\", \"Viva Forevis aptent taciti sociosqu ad litora torquent.\", \"Copo furadis é disculpa de bebadis, arcu quam euismod magna.\", \"Delegadis gente finis, bibendum egestas augue arcu ut est.\", \"In elementis mé pra quem é amistosis quis leo.\", \"Não sou faixa preta cumpadi, sou preto inteiris, inteiris.\", \"Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.\", \"Suco de cevadiss deixa as pessoas mais interessantis.\", \"Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis.\", \"Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo!\", \"Quem manda na minha terra sou euzis!\", \"Si num tem leite então bota uma pinga aí cumpadi!\", \"Diuretics paradis num copo é motivis de denguis.\", \"Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.\", \"A ordem dos tratores não altera o pão duris.\", \"Quem num gosta di mim que vai caçá sua turmis!\", \"Quem num gosta di mé, boa gentis num é.\", \"Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!\", \"Per aumento de cachacis, eu reclamis.\", \"Detraxit consequat et quo num tendi nada.\", \"Admodum accumsan disputationi eu sit. Vide electram sadipscing et per.\", \"Leite de capivaris, leite de mula manquis sem cabeça.\", \"Aenean aliquam molestie leo, vitae iaculis nisl.\", \"Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget.\", \"Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi.\", \"Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum felis.\", \"Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus.\", \"Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio.\", \"Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl.\", \"Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum.\"];//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvbGliL3F1b3Rlcy5qcy5qcyIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL3NyYy9saWIvcXVvdGVzLmpzPzhjNDUiXSwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNvbnN0IG11c3N1bU1haW5RdW90ZSA9IFwiTXVzc3VtIElwc3VtLCBjYWNpbGRzIHZpZGlzIGxpdHJvIGFiZXJ0aXMuXCI7XG5cbmV4cG9ydCBjb25zdCBtdXNzdW1RdW90ZXMgPSBbXG4gIFwiUHJhIGzDoSAsIGRlcG9pcyBkaXZvbHRpcyBwb3JyaXMsIHBhcmFkaXMuXCIsXG4gIFwiUGFpc2lzLCBmaWxoaXMsIGVzcGlyaXRpcyBzYW50aXMuXCIsXG4gIFwiTcOpIGZhaXogZWxlbWVudHVtIGdpcmFyemlzLCBuaXNpIGVyb3MgdmVybWVpby5cIixcbiAgXCJNYW5kdW1hIHBpbmR1cmV0YSBxdWl1bSBkaWEgbm9pcyBwYWdhLlwiLFxuICBcIlNhcGllbiBpbiBtb250aSBwYWxhdnJpcyBxdWkgbnVtIHNpZ25pZmljYSBuYWRpcyBpIHBhcmVjaSBsYXRpbS5cIixcbiAgXCJJbnRlcmVzc2FudGlzcyBxdWlzc28gcHVkaWEgY2UgcmVjZWl0YSBkZSBib2xpcywgbWFpcyBib2xpcyBldSBudW0gZ29zdGlzLlwiLFxuICBcIlN1Y28gZGUgY2V2YWRpc3MsIMOpIHVtIGxlaXRlIGRpdmluaXMsIHF1aSB0ZW0gbHVwdWxpeiwgbWF0aXMsIGFndWlzIGUgZmVybWVudGlzLlwiLFxuICBcIkludGVyYWdpIG5vIG3DqSwgY3Vyc3VzIHF1aXMsIHZlaGljdWxhIGFjIG5pc2kuXCIsXG4gIFwiQ2FzYW1lbnRpc3MgZmFpeiBtYWxhbmRyaXMgc2UgcGlydWxpdMOhLlwiLFxuICBcIkNldmFkaXMgaW0gYW1wb2xhIHBhIGFybWEgdW1hIHBpbmR1cmV0YS5cIixcbiAgXCJBdGlyZWkgbyBwYXUgbm8gZ2F0aXMsIHBlciBnYXRpcyBudW0gbW9ycmV1cy5cIixcbiAgXCJWaXZhIEZvcmV2aXMgYXB0ZW50IHRhY2l0aSBzb2Npb3NxdSBhZCBsaXRvcmEgdG9ycXVlbnQuXCIsXG4gIFwiQ29wbyBmdXJhZGlzIMOpIGRpc2N1bHBhIGRlIGJlYmFkaXMsIGFyY3UgcXVhbSBldWlzbW9kIG1hZ25hLlwiLFxuICBcIkRlbGVnYWRpcyBnZW50ZSBmaW5pcywgYmliZW5kdW0gZWdlc3RhcyBhdWd1ZSBhcmN1IHV0IGVzdC5cIixcbiAgXCJJbiBlbGVtZW50aXMgbcOpIHByYSBxdWVtIMOpIGFtaXN0b3NpcyBxdWlzIGxlby5cIixcbiAgXCJOw6NvIHNvdSBmYWl4YSBwcmV0YSBjdW1wYWRpLCBzb3UgcHJldG8gaW50ZWlyaXMsIGludGVpcmlzLlwiLFxuICBcIk1haXMgdmFsZSB1bSBiZWJhZGlzIGNvbmhlY2lkaXNzLCBxdWUgdW0gYWxjb29sYXRyYSBhbm9uaW1pcy5cIixcbiAgXCJTdWNvIGRlIGNldmFkaXNzIGRlaXhhIGFzIHBlc3NvYXMgbWFpcyBpbnRlcmVzc2FudGlzLlwiLFxuICBcIlTDoSBkZXByaW1pZGlzLCBldSBjb25oZcOnbyB1bWEgY2FjaGFjaXMgcXVlIHBvZGUgYWxlZ3JhciBzdWEgdmlkaXMuXCIsXG4gIFwiVG9kbyBtdW5kbyB2w6ogb3MgcG9ycmlzIHF1ZSBldSB0b21vLCBtYXMgbmluZ3XDqW0gdsOqIG9zIHRvbWJpcyBxdWUgZXUgbGV2byFcIixcbiAgXCJRdWVtIG1hbmRhIG5hIG1pbmhhIHRlcnJhIHNvdSBldXppcyFcIixcbiAgXCJTaSBudW0gdGVtIGxlaXRlIGVudMOjbyBib3RhIHVtYSBwaW5nYSBhw60gY3VtcGFkaSFcIixcbiAgXCJEaXVyZXRpY3MgcGFyYWRpcyBudW0gY29wbyDDqSBtb3RpdmlzIGRlIGRlbmd1aXMuXCIsXG4gIFwiRW0gcMOpIHNlbSBjYWlyLCBkZWl0YWRvIHNlbSBkb3JtaXIsIHNlbnRhZG8gc2VtIGNvY2hpbGFyIGUgZmF6ZW5kbyBwb3NlLlwiLFxuICBcIkEgb3JkZW0gZG9zIHRyYXRvcmVzIG7Do28gYWx0ZXJhIG8gcMOjbyBkdXJpcy5cIixcbiAgXCJRdWVtIG51bSBnb3N0YSBkaSBtaW0gcXVlIHZhaSBjYcOnw6Egc3VhIHR1cm1pcyFcIixcbiAgXCJRdWVtIG51bSBnb3N0YSBkaSBtw6ksIGJvYSBnZW50aXMgbnVtIMOpLlwiLFxuICBcIlNpIHUgbXVuZG8gdMOhIG11aXRvIHBhcmFkaXM/IFRvbWEgdW0gbcOpIHF1ZSBvIG11bmRvIHZhaSBnaXJhcnppcyFcIixcbiAgXCJQZXIgYXVtZW50byBkZSBjYWNoYWNpcywgZXUgcmVjbGFtaXMuXCIsXG4gIFwiRGV0cmF4aXQgY29uc2VxdWF0IGV0IHF1byBudW0gdGVuZGkgbmFkYS5cIixcbiAgXCJBZG1vZHVtIGFjY3Vtc2FuIGRpc3B1dGF0aW9uaSBldSBzaXQuIFZpZGUgZWxlY3RyYW0gc2FkaXBzY2luZyBldCBwZXIuXCIsXG4gIFwiTGVpdGUgZGUgY2FwaXZhcmlzLCBsZWl0ZSBkZSBtdWxhIG1hbnF1aXMgc2VtIGNhYmXDp2EuXCIsXG4gIFwiQWVuZWFuIGFsaXF1YW0gbW9sZXN0aWUgbGVvLCB2aXRhZSBpYWN1bGlzIG5pc2wuXCIsXG4gIFwiUHJhZXNlbnQgdmVsIHZpdmVycmEgbmlzaS4gTWF1cmlzIGFsaXF1ZXQgbnVuYyBub24gdHVycGlzIHNjZWxlcmlzcXVlLCBlZ2V0LlwiLFxuICBcIlBvc3VlcmUgbGliZXJvIHZhcml1cy4gTnVsbGFtIGEgbmlzbCB1dCBhbnRlIGJsYW5kaXQgaGVuZHJlcml0LiBBZW5lYW4gc2l0IGFtZXQgbmlzaS5cIixcbiAgXCJOZWMgb3JjaSBvcm5hcmUgY29uc2VxdWF0LiBQcmFlc2VudCBsYWNpbmlhIHVsdHJpY2VzIGNvbnNlY3RldHVyLiBTZWQgbm9uIGlwc3VtIGZlbGlzLlwiLFxuICBcIlByYWVzZW50IG1hbGVzdWFkYSB1cm5hIG5pc2ksIHF1aXMgdm9sdXRwYXQgZXJhdCBoZW5kcmVyaXQgbm9uLiBOYW0gdnVscHV0YXRlIGRhcGlidXMuXCIsXG4gIFwiTnVsbGFtIHZvbHV0cGF0IHJpc3VzIG5lYyBsZW8gY29tbW9kbywgdXQgaW50ZXJkdW0gZGlhbSBsYW9yZWV0LiBTZWQgbm9uIGNvbnNlcXVhdCBvZGlvLlwiLFxuICBcIk1hdXJpcyBuZWMgZG9sb3IgaW4gZXJvcyBjb21tb2RvIHRlbXBvci4gQWVuZWFuIGFsaXF1YW0gbW9sZXN0aWUgbGVvLCB2aXRhZSBpYWN1bGlzIG5pc2wuXCIsXG4gIFwiVmVoaWN1bGEgbm9uLiBVdCBzZWQgZXggZXJvcy4gVml2YW11cyBzaXQgYW1ldCBuaWJoIG5vbiB0ZWxsdXMgdHJpc3RpcXVlIGludGVyZHVtLlwiXG5dO1xuIl0sIm1hcHBpbmdzIjoiQUFBQTtBQUFBO0FBQUE7QUFBQTtBQUVBIiwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./src/lib/quotes.js\n");
 
-/* ---------------
-mipsum.js v2.2.2
---------------- */
-var mussumMainQuote = "Mussum Ipsum, cacilds vidis litro abertis.";
-var mussumQuotes = ["Pra lá , depois divoltis porris, paradis.", "Paisis, filhis, espiritis santis.", "Mé faiz elementum girarzis, nisi eros vermeio.", "Manduma pindureta quium dia nois paga.", "Sapien in monti palavris qui num significa nadis i pareci latim.", "Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.", "Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.", "Interagi no mé, cursus quis, vehicula ac nisi.", "Casamentiss faiz malandris se pirulitá.", "Cevadis im ampola pa arma uma pindureta.", "Atirei o pau no gatis, per gatis num morreus.", "Viva Forevis aptent taciti sociosqu ad litora torquent.", "Copo furadis é disculpa de bebadis, arcu quam euismod magna.", "Delegadis gente finis, bibendum egestas augue arcu ut est.", "In elementis mé pra quem é amistosis quis leo.", "Não sou faixa preta cumpadi, sou preto inteiris, inteiris.", "Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.", "Suco de cevadiss deixa as pessoas mais interessantis.", "Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis.", "Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo!", "Quem manda na minha terra sou euzis!", "Si num tem leite então bota uma pinga aí cumpadi!", "Diuretics paradis num copo é motivis de denguis.", "Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.", "A ordem dos tratores não altera o pão duris.", "Quem num gosta di mim que vai caçá sua turmis!", "Quem num gosta di mé, boa gentis num é.", "Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!", "Per aumento de cachacis, eu reclamis.", "Detraxit consequat et quo num tendi nada.", "Admodum accumsan disputationi eu sit. Vide electram sadipscing et per.", "Leite de capivaris, leite de mula manquis sem cabeça.", "Aenean aliquam molestie leo, vitae iaculis nisl.", "Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget.", "Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi.", "Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum felis.", "Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus.", "Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio.", "Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl.", "Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum."];
+/***/ }),
 
-var mIpsum = function mIpsum(options) {
-  var defaults = {
-    pNum: 1, //number of paragraphs requested
-    quotes: mussumQuotes, //array of quotes to generate paragraphs
-    mainQuote: mussumMainQuote, //main quote to start your "Lorem Ipsum"
-    genLimit: 1000, //limit of paragraphs that can be requested
-    resultType: 'html', //format of the response: html or text
-    tagBefore: '<p>', //anything you want to put before each paragraph
-    tagAfter: '</p>', //anything you want to put after each paragraph
-    pQuotes: 4 //number of quotes used to build a paragraph
-  };
+/***/ "./src/mipsum.js":
+/*!***********************!*\
+  !*** ./src/mipsum.js ***!
+  \***********************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-  /* Define options ---- > */
-  var opt = JSON.parse(JSON.stringify(defaults));
-  if (options) {
-    Object.keys(options).forEach(function (option) {
-      return opt[option] = options[option];
-    });
-    var error = errorHandler(opt);
-    if (error) {
-      throw new Error(error);
-    }
-  }
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _lib_quotes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/quotes */ \"./src/lib/quotes.js\");\nfunction _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nfunction _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }\n\nfunction _nonIterableSpread() { throw new TypeError(\"Invalid attempt to spread non-iterable instance\"); }\n\nfunction _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === \"[object Arguments]\") return Array.from(iter); }\n\nfunction _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\n\n\nvar MussumIpsum =\n/*#__PURE__*/\nfunction () {\n  function MussumIpsum(options) {\n    _classCallCheck(this, MussumIpsum);\n\n    this._userOptions = options;\n    this._defaults = {\n      pNum: 1,\n      quotes: _lib_quotes__WEBPACK_IMPORTED_MODULE_0__[\"mussumQuotes\"],\n      mainQuote: _lib_quotes__WEBPACK_IMPORTED_MODULE_0__[\"mussumMainQuote\"],\n      genLimit: 1000,\n      resultType: 'html',\n      tagBefore: '<p>',\n      tagAfter: '</p>',\n      pQuotes: 4\n    };\n  }\n  /* Create ---- > */\n\n\n  _createClass(MussumIpsum, [{\n    key: \"createParagraphs\",\n    value: function createParagraphs() {\n      var options = this._options;\n      var paragraphs = [];\n      var limit = Math.floor(options.quotes.length / options.pQuotes);\n      var roundsNeeded = Math.ceil(options.pNum / limit);\n      var tempParagraphs = [];\n\n      for (var i = 0; i < roundsNeeded * limit; i++) {\n        tempParagraphs.push(this.createOneParagraph());\n      }\n\n      tempParagraphs.forEach(function (paragraph, i) {\n        if (options.pNum > i) paragraphs.push(paragraph);\n      });\n      return paragraphs;\n    }\n  }, {\n    key: \"createOneParagraph\",\n    value: function createOneParagraph() {\n      var options = this._options;\n      var singleParagraph = '';\n\n      var tempQuotes = _toConsumableArray(options.quotes);\n\n      var randomLimit = tempQuotes.length;\n\n      for (var i = 0; i < options.pQuotes; i++) {\n        var thisPosition = Math.round(Math.random() * (randomLimit - 1) + 1) - 1; //get a random position\n\n        singleParagraph += \"\".concat(tempQuotes[thisPosition], \" \"); // append the quote on a temp string\n\n        tempQuotes.splice(thisPosition, 1); //exlude the used value for the array\n\n        randomLimit--; //decrease max getRandomNumber\n      }\n\n      return singleParagraph;\n    }\n    /* Format response ---- > */\n\n  }, {\n    key: \"format\",\n    value: function format(paragraphs) {\n      var options = this._options;\n      var response = '';\n      paragraphs[0] = \"\".concat(options.mainQuote, \" \").concat(paragraphs[0]); // add the initial quote\n\n      paragraphs.forEach(function (paragraph, index) {\n        response += options.resultType === 'html' ? \"\".concat(options.tagBefore).concat(paragraph).concat(options.tagAfter) : \"\".concat(paragraph, \" \\n\\n\");\n      });\n      return response;\n    }\n  }, {\n    key: \"errorHandler\",\n    value: function errorHandler() {\n      var options = this._options;\n\n      if (options.pNum <= 0 || !options.pNum === '') {\n        return \"Is not possible to create 0 paragraphs.\";\n      }\n\n      if (options.pNum > options.genLimit) {\n        return \"Your request of \".concat(options.pNum, \" paragraphs, is larger than the defined limit: \").concat(options.genLimit, \". You can change that limit using the key 'genLimit' on your options object.\");\n      }\n\n      if (options.quotes.length < options.pQuotes) {\n        return \"Your array have only \".concat(options.quotes.length, \" quotes, you need at least \").concat(options.pQuotes, \" quotes to have results.\");\n      }\n\n      if (!options.resultType === 'html' || !options.resultType === 'text') {\n        return \"The value '\".concat(opt.resultType, \"' given to 'resultType' is not accepted. Choose between: html or text.\");\n      }\n    }\n  }, {\n    key: \"init\",\n    value: function init() {\n      var _this = this;\n\n      /* Define options ---- > */\n      this._options = _objectSpread({}, this._defaults);\n\n      if (this._userOptions) {\n        Object.keys(this._userOptions).forEach(function (option) {\n          return _this._options[option] = _this._userOptions[option];\n        });\n        var error = this.errorHandler();\n        if (error) throw new Error(error);\n      }\n\n      var paragraphs = this.createParagraphs();\n      return this.format(paragraphs);\n    }\n  }]);\n\n  return MussumIpsum;\n}();\n\nvar mIpsum = function mIpsum(options) {\n  return new MussumIpsum(options).init();\n};\n\nwindow.mIpsum = mIpsum;//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvbWlwc3VtLmpzLmpzIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vLy4vc3JjL21pcHN1bS5qcz8wMDc5Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IG11c3N1bVF1b3RlcywgbXVzc3VtTWFpblF1b3RlIH0gZnJvbSAnLi9saWIvcXVvdGVzJ1xuXG5jbGFzcyBNdXNzdW1JcHN1bSB7XG4gIGNvbnN0cnVjdG9yIChvcHRpb25zKSB7XG4gICAgdGhpcy5fdXNlck9wdGlvbnMgPSBvcHRpb25zO1xuICAgIHRoaXMuX2RlZmF1bHRzID0ge1xuICAgICAgcE51bTogMSxcbiAgICAgIHF1b3RlczogbXVzc3VtUXVvdGVzLFxuICAgICAgbWFpblF1b3RlOiBtdXNzdW1NYWluUXVvdGUsXG4gICAgICBnZW5MaW1pdDogMTAwMCxcbiAgICAgIHJlc3VsdFR5cGU6ICdodG1sJyxcbiAgICAgIHRhZ0JlZm9yZTogJzxwPicsXG4gICAgICB0YWdBZnRlcjogJzwvcD4nLFxuICAgICAgcFF1b3RlczogNCxcbiAgICB9XG4gIH1cblxuICAvKiBDcmVhdGUgLS0tLSA+ICovXG4gIGNyZWF0ZVBhcmFncmFwaHMoKSB7XG4gICAgY29uc3QgeyBfb3B0aW9uczogb3B0aW9ucyB9ID0gdGhpcztcblxuICAgIGxldCBwYXJhZ3JhcGhzID0gW107XG4gICAgY29uc3QgbGltaXQgPSBNYXRoLmZsb29yKG9wdGlvbnMucXVvdGVzLmxlbmd0aC9vcHRpb25zLnBRdW90ZXMpO1xuICAgIGNvbnN0IHJvdW5kc05lZWRlZCA9IE1hdGguY2VpbChvcHRpb25zLnBOdW0vbGltaXQpO1xuXG4gICAgbGV0IHRlbXBQYXJhZ3JhcGhzID0gW107XG4gICAgZm9yIChsZXQgaSA9IDA7IGkgPCByb3VuZHNOZWVkZWQqbGltaXQ7IGkrKykge1xuICAgICAgdGVtcFBhcmFncmFwaHMucHVzaCh0aGlzLmNyZWF0ZU9uZVBhcmFncmFwaCgpKTtcbiAgICB9XG5cbiAgICB0ZW1wUGFyYWdyYXBocy5mb3JFYWNoKChwYXJhZ3JhcGgsIGkpID0+IHsgaWYgKG9wdGlvbnMucE51bSA+IGkpIHBhcmFncmFwaHMucHVzaChwYXJhZ3JhcGgpfSk7XG4gICAgcmV0dXJuIHBhcmFncmFwaHM7XG4gIH1cblxuICBjcmVhdGVPbmVQYXJhZ3JhcGgoKXtcbiAgICBjb25zdCB7IF9vcHRpb25zOiBvcHRpb25zIH0gPSB0aGlzO1xuXG4gICAgbGV0IHNpbmdsZVBhcmFncmFwaCA9ICcnO1xuICAgIGxldCB0ZW1wUXVvdGVzID0gWyAuLi5vcHRpb25zLnF1b3RlcyBdO1xuICAgIGxldCByYW5kb21MaW1pdCA9IHRlbXBRdW90ZXMubGVuZ3RoO1xuXG4gICAgZm9yICh2YXIgaSA9IDA7IGkgPCBvcHRpb25zLnBRdW90ZXM7IGkrKykge1xuICAgICAgY29uc3QgdGhpc1Bvc2l0aW9uID0gTWF0aC5yb3VuZChNYXRoLnJhbmRvbSgpICogKHJhbmRvbUxpbWl0IC0gMSkgKyAxKSAtMTsgLy9nZXQgYSByYW5kb20gcG9zaXRpb25cbiAgICAgIHNpbmdsZVBhcmFncmFwaCArPSBgJHt0ZW1wUXVvdGVzW3RoaXNQb3NpdGlvbl19IGA7IC8vIGFwcGVuZCB0aGUgcXVvdGUgb24gYSB0ZW1wIHN0cmluZ1xuICAgICAgdGVtcFF1b3Rlcy5zcGxpY2UodGhpc1Bvc2l0aW9uLCAxKTsgLy9leGx1ZGUgdGhlIHVzZWQgdmFsdWUgZm9yIHRoZSBhcnJheVxuICAgICAgcmFuZG9tTGltaXQgLS07IC8vZGVjcmVhc2UgbWF4IGdldFJhbmRvbU51bWJlclxuICAgIH1cblxuICAgIHJldHVybiBzaW5nbGVQYXJhZ3JhcGg7XG4gIH1cblxuICAvKiBGb3JtYXQgcmVzcG9uc2UgLS0tLSA+ICovXG4gIGZvcm1hdChwYXJhZ3JhcGhzKXtcbiAgICBjb25zdCB7IF9vcHRpb25zOiBvcHRpb25zIH0gPSB0aGlzO1xuXG4gICAgbGV0IHJlc3BvbnNlID0gJyc7XG4gICAgcGFyYWdyYXBoc1swXSA9IGAke29wdGlvbnMubWFpblF1b3RlfSAke3BhcmFncmFwaHNbMF19YDsgLy8gYWRkIHRoZSBpbml0aWFsIHF1b3RlXG5cbiAgICBwYXJhZ3JhcGhzLmZvckVhY2goKHBhcmFncmFwaCwgaW5kZXgpID0+IHtcbiAgICAgIHJlc3BvbnNlICs9IChvcHRpb25zLnJlc3VsdFR5cGUgPT09ICdodG1sJykgPyBgJHtvcHRpb25zLnRhZ0JlZm9yZX0ke3BhcmFncmFwaH0ke29wdGlvbnMudGFnQWZ0ZXJ9YCA6IGAke3BhcmFncmFwaH0gXFxuXFxuYDtcbiAgICB9KTtcblxuICAgIHJldHVybiByZXNwb25zZTtcbiAgfTtcblxuICBlcnJvckhhbmRsZXIoKXtcbiAgICBjb25zdCB7IF9vcHRpb25zOiBvcHRpb25zIH0gPSB0aGlzO1xuXG4gICAgaWYgKG9wdGlvbnMucE51bSA8PSAwIHx8ICFvcHRpb25zLnBOdW0gPT09ICcnKSB7XG4gICAgICByZXR1cm4gYElzIG5vdCBwb3NzaWJsZSB0byBjcmVhdGUgMCBwYXJhZ3JhcGhzLmA7XG4gICAgfVxuICAgIGlmIChvcHRpb25zLnBOdW0gPiBvcHRpb25zLmdlbkxpbWl0KSB7XG4gICAgICByZXR1cm4gYFlvdXIgcmVxdWVzdCBvZiAke29wdGlvbnMucE51bX0gcGFyYWdyYXBocywgaXMgbGFyZ2VyIHRoYW4gdGhlIGRlZmluZWQgbGltaXQ6ICR7b3B0aW9ucy5nZW5MaW1pdH0uIFlvdSBjYW4gY2hhbmdlIHRoYXQgbGltaXQgdXNpbmcgdGhlIGtleSAnZ2VuTGltaXQnIG9uIHlvdXIgb3B0aW9ucyBvYmplY3QuYDtcbiAgICB9XG4gICAgaWYgKG9wdGlvbnMucXVvdGVzLmxlbmd0aCA8IG9wdGlvbnMucFF1b3Rlcykge1xuICAgICAgcmV0dXJuIGBZb3VyIGFycmF5IGhhdmUgb25seSAke29wdGlvbnMucXVvdGVzLmxlbmd0aH0gcXVvdGVzLCB5b3UgbmVlZCBhdCBsZWFzdCAke29wdGlvbnMucFF1b3Rlc30gcXVvdGVzIHRvIGhhdmUgcmVzdWx0cy5gO1xuICAgIH1cbiAgICBpZiAoIW9wdGlvbnMucmVzdWx0VHlwZSA9PT0gJ2h0bWwnIHx8ICFvcHRpb25zLnJlc3VsdFR5cGUgPT09ICd0ZXh0Jykge1xuICAgICAgcmV0dXJuIGBUaGUgdmFsdWUgJyR7b3B0LnJlc3VsdFR5cGV9JyBnaXZlbiB0byAncmVzdWx0VHlwZScgaXMgbm90IGFjY2VwdGVkLiBDaG9vc2UgYmV0d2VlbjogaHRtbCBvciB0ZXh0LmA7XG4gICAgfVxuICB9XG5cbiAgaW5pdCgpe1xuICAgIC8qIERlZmluZSBvcHRpb25zIC0tLS0gPiAqL1xuICAgIHRoaXMuX29wdGlvbnMgPSB7IC4uLnRoaXMuX2RlZmF1bHRzIH07XG5cbiAgICBpZiAodGhpcy5fdXNlck9wdGlvbnMpIHtcbiAgICAgIE9iamVjdC5rZXlzKHRoaXMuX3VzZXJPcHRpb25zKS5mb3JFYWNoKG9wdGlvbiA9PiB0aGlzLl9vcHRpb25zW29wdGlvbl0gPSB0aGlzLl91c2VyT3B0aW9uc1tvcHRpb25dKTtcblxuICAgICAgY29uc3QgZXJyb3IgPSB0aGlzLmVycm9ySGFuZGxlcigpO1xuICAgICAgaWYgKGVycm9yKSB0aHJvdyBuZXcgRXJyb3IoZXJyb3IpO1xuICAgIH1cblxuICAgIGNvbnN0IHBhcmFncmFwaHMgPSB0aGlzLmNyZWF0ZVBhcmFncmFwaHMoKTtcbiAgICByZXR1cm4gdGhpcy5mb3JtYXQocGFyYWdyYXBocyk7XG4gIH1cbn1cblxuY29uc3QgbUlwc3VtID0gb3B0aW9ucyA9PiBuZXcgTXVzc3VtSXBzdW0ob3B0aW9ucykuaW5pdCgpO1xud2luZG93Lm1JcHN1bSA9IG1JcHN1bTtcbiJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQTtBQUNBO0FBQ0E7OztBQUNBO0FBQUE7QUFDQTtBQUFBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBUkE7QUFVQTtBQUVBO0FBQ0E7QUFDQTs7O0FBREE7QUFBQTtBQUdBO0FBQ0E7QUFDQTtBQUVBO0FBQ0E7QUFBQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQUE7QUFBQTtBQUNBO0FBQ0E7OztBQUVBO0FBQUE7QUFHQTtBQUNBO0FBQUE7QUFDQTtBQUFBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFBQTtBQUNBO0FBQUE7QUFDQTtBQUFBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFFQTtBQUNBOzs7QUFBQTtBQUFBO0FBR0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBRUE7QUFDQTs7O0FBRUE7QUFBQTtBQUNBO0FBRUE7QUFDQTtBQUNBO0FBQ0E7QUFBQTtBQUNBO0FBQ0E7QUFDQTtBQUFBO0FBQ0E7QUFDQTtBQUNBO0FBQUE7QUFDQTtBQUNBO0FBQ0E7OztBQUVBO0FBQUE7QUFDQTtBQUFBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFBQTtBQUFBO0FBRUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7Ozs7OztBQUdBO0FBQUE7QUFBQTtBQUNBO0FBQUEiLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./src/mipsum.js\n");
 
-  /* Create ---- > */
-  function createParagraphs(opt) {
-    var paragraphs = [];
-    var limit = Math.floor(opt.quotes.length / opt.pQuotes);
-    var roundsNeeded = Math.ceil(opt.pNum / limit);
+/***/ })
 
-    var tempParagraphs = [];
-    for (var i = 0; i < roundsNeeded * limit; i++) {
-      tempParagraphs.push(createOneParagraph(opt));
-    }
-
-    tempParagraphs.forEach(function (paragraph, i) {
-      if (opt.pNum > i) paragraphs.push(paragraph);
-    });
-    return paragraphs;
-  };
-
-  function createOneParagraph(opt) {
-
-    var singleParagraph = '';
-    var tempQuotes = [].concat(opt.quotes);
-    var randomLimit = tempQuotes.length;
-
-    for (var i = 0; i < opt.pQuotes; i++) {
-
-      var thisPosition = Math.round(Math.random() * (randomLimit - 1) + 1) - 1; //get a random position
-      singleParagraph += tempQuotes[thisPosition] + " "; // append the quote on a temp string
-      tempQuotes.splice(thisPosition, 1); //exlude the used value for the array
-      randomLimit--; //decrease max getRandomNumber
-    }
-    return singleParagraph;
-  };
-
-  /* Generate view ---- > */
-  function generateView(paragraphs) {
-    var view = '';
-    paragraphs[0] = opt.mainQuote + " " + paragraphs[0]; // add the initial quote
-
-    paragraphs.forEach(function (paragraph, index) {
-      if (opt.resultType === 'html') {
-        view += "" + opt.tagBefore + paragraph + " " + opt.tagAfter;
-      } else {
-        view += paragraph + " \n\n";
-      }
-    });
-
-    return view;
-  };
-
-  return generateView(createParagraphs(opt));
-};
-
-var errorHandler = function errorHandler(opt) {
-  if (opt.pNum <= 0 || !opt.pNum === '') {
-    return "Is not possible to create 0 paragraphs.";
-  }
-  if (opt.pNum > opt.genLimit) {
-    return "Your request of " + opt.pNum + " paragraphs, is larger than the defined limit: " + opt.genLimit + ". You can change that limit using the key 'genLimit' on your options object.";
-  }
-  if (opt.quotes.length < opt.pQuotes) {
-    return "Your array have only " + opt.quotes.length + " quotes, you need at least " + opt.pQuotes + " quotes to have results.";
-  }
-  if (!opt.resultType === 'html' || !opt.resultType === 'text') {
-    return "The value '" + opt.resultType + "' given to 'resultType' is not accepted. Choose between: html or text.";
-  }
-};
-
-window.mIpsum = mIpsum;
+/******/ });
