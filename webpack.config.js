@@ -3,6 +3,7 @@ const path = require('path');
 
 const config = {
   entry: './src/mipsum.js',
+  watch: true,
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'mipsum.js'
