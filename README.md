@@ -1,4 +1,4 @@
-# mIpsum v2.2.2
+# mIpsum v2.3.0
 
 This is a Javascript Lorem Ipsum generator, created for [mussumipsum.com](http://mussumipsum.com), a brazilian dummy text generator. You can use it to develop anything that concerns Mussum Ipsum (like a plugin for Sublime or Atom or whatever), or to create your own customized Lorem Ipsum.
 
