@@ -2,7 +2,7 @@
   "name": "mipsum",
   "version": "2.3.0",
   "description": "A lorem ipsum generator",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "clean": "rm dist/bundle.js",
     "start": "webpack -d --mode development --watch",

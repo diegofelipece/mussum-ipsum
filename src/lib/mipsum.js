@@ -1,6 +1,6 @@
-import { mussumQuotes, mussumMainQuote } from './lib/quotes'
+import { mussumQuotes, mussumMainQuote } from './quotes'
 
-class MussumIpsum {
+export class MussumIpsum {
   constructor (options) {
     this._userOptions = options;
     this._defaults = {
@@ -96,5 +96,5 @@ class MussumIpsum {
   }
 }
 
-const mIpsum = options => new MussumIpsum(options).init();
+export const mIpsum = options => new MussumIpsum(options).init();
 window.mIpsum = mIpsum;
