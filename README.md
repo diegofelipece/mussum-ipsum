@@ -4,13 +4,37 @@ This is a Javascript Lorem Ipsum generator, created for [mussumipsum.com](http:/
 
 ____
 
-Add it to your project using **Bower** or just download the code.
+Add it to your project using **NPM**:
+
+``` bash
+npm install mipsum --save
+
+```
+
+**Yarn**:
+
+``` bash
+yarn add mipsum
+```
+
+Since `v2.3.1` it can be also imported as a module. Example:
+
+``` javascript
+import { mIpsum } from 'mipsum'
+
+const myLoremIpsum = mIpsum({
+  pNum: 1,
+  resultType: 'text',
+})
+```
+
+You can also use the good old **Bower** or just download the code.
 
 ``` bash
 bower install mipsum --save
 ```
 
-Just add **mipsum.min.js** to your project and add a call via JS.
+In this case, you can just add **mipsum.min.js** to your project and add a call via JS.
 
 ``` html
 <script src="path/to/mipsum.min.js"></script>
