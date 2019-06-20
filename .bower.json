@@ -1,10 +1,10 @@
 {
   "name": "mipsum",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "authors": [
     "Diego Esteves <hello@diegoesteves.ink>"
   ],
-  "main": "src/mipsum.js",
+  "main": "src/index.js",
   "description": "A lorem ipsum generator",
   "keywords": [
     "lorem ipsum",

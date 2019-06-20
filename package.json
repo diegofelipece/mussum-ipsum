@@ -1,8 +1,8 @@
 {
   "name": "mipsum",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "description": "A lorem ipsum generator",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "clean": "rm dist/bundle.js",
     "start": "webpack -d --mode development --watch",
@@ -10,11 +10,18 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "webpack": "^4.32.2",
-    "webpack-cli": "^3.3.2",
-    "babel-loader": "^8.0.6",
     "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5"
+    "@babel/preset-env": "^7.4.5",
+    "babel-eslint": "^10.0.2",
+    "babel-loader": "^8.0.6",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.11.0",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2"
   },
   "repository": {
     "type": "git",

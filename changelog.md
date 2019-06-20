@@ -4,3 +4,6 @@ v2.2.0
 
 v2.3.0
 • Allow main script to be imported as a module
+
+v2.3.1
+• Improve module version
