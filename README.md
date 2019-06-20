@@ -1,4 +1,4 @@
-# mIpsum v2.3.0
+# mIpsum
 
 This is a Javascript Lorem Ipsum generator, created for [mussumipsum.com](http://mussumipsum.com), a brazilian dummy text generator. You can use it to develop anything that concerns Mussum Ipsum (like a plugin for Sublime or Atom or whatever), or to create your own customized Lorem Ipsum.
 
@@ -16,7 +16,7 @@ Just add **mipsum.min.js** to your project and add a call via JS.
 <script src="path/to/mipsum.min.js"></script>
 ```
 
-mIpsum was created using plane Javascript (ES2015 and beyond), to allow you to decide if you want to include it in any context, even jQuery for example:
+mIpsum was created using plane Javascript, to allow you to decide if you want to include it in any context, even jQuery for example:
 
 ``` javascript
 $(function(){
