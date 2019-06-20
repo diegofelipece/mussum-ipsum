@@ -17,7 +17,7 @@ npm install mipsum --save
 yarn add mipsum
 ```
 
-Since `v2.3.1` it can be also imported as a module. Example:
+Since `v2.3.2` it can be also imported as a module. Example:
 
 ``` javascript
 import { mIpsum } from 'mipsum'

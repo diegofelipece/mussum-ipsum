@@ -1,6 +1,6 @@
 {
   "name": "mipsum",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "description": "A lorem ipsum generator",
   "main": "src/index.js",
   "scripts": {
