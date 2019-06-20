@@ -1,4 +1,4 @@
-import { MussumIpsum , mIpsum } from './lib/mipsum'
+import { MussumIpsum, mIpsum } from './lib/mipsum'
 
 export {
   MussumIpsum,

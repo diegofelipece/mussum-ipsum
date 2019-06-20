@@ -1,21 +1,20 @@
-const webpack = require('webpack');
-const path = require('path');
+const path = require('path')
 
 const config = {
-  entry: './src/mipsum.js',
+  entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'mipsum.min.js'
+    filename: 'mipsum.min.js',
   },
   module: {
     rules: [
       {
         test: /\.js$/,
-        use: 'babel-loader',
-        exclude: /node_modules/
-      }
-    ]
-  }
+        exclude: /node_modules/,
+        use: ['babel-loader', 'eslint-loader'],
+      },
+    ],
+  },
 }
 
-module.exports = config;
+module.exports = config
