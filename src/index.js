@@ -1,6 +1,6 @@
 import { MussumIpsum, mIpsum } from './lib/mipsum'
 
-export default {
+export {
   MussumIpsum,
   mIpsum,
 }
