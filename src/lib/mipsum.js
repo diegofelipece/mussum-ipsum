@@ -28,7 +28,7 @@ export class MussumIpsum {
       tempParagraphs.push(this.createOneParagraph())
     }
 
-    tempParagraphs.forEach((paragraph, i) => { if (options.pNum > i) paragraphs.push(paragraph) })
+    tempParagraphs.forEach((paragraph, i) => (options.pNum > i) && paragraphs.push(paragraph))
     return paragraphs
   }
 
@@ -43,7 +43,7 @@ export class MussumIpsum {
       const thisPosition = (
         Math.round(Math.random() * (randomLimit - 1) + 1) - 1
       ) // get a random position
-      singleParagraph += `${tempQuotes[thisPosition]} ` // append the quote on a temp string
+      singleParagraph += `${tempQuotes[thisPosition]}` // append the quote on a temp string
       tempQuotes.splice(thisPosition, 1) // exlude the used value for the array
       randomLimit -= 1 // decrease max getRandomNumber
     }
@@ -56,14 +56,16 @@ export class MussumIpsum {
     const { _options: options } = this
     const paragraphs = recievedParagraphs
 
-    let response = ''
-    paragraphs[0] = `${options.mainQuote} ${paragraphs[0]}` // add the initial quote
+    // add the initial quote
+    paragraphs[0] = `${options.mainQuote} ${paragraphs[0]}`
 
-    paragraphs.forEach((paragraph) => {
-      response += (options.resultType === 'html') ? `${options.tagBefore}${paragraph}${options.tagAfter}` : `${paragraph} \n\n`
-    })
-
-    return response
+    return (options.resultType === 'array')
+      ? paragraphs
+      : paragraphs.reduce((response, paragraph) => (
+        (options.resultType === 'html')
+          ? `${options.tagBefore}${paragraph}${options.tagAfter}`
+          : `${paragraph}\n\n`
+      ), '')
   }
 
   errorHandler() {
