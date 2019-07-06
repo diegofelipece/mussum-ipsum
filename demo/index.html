@@ -119,6 +119,7 @@
             <select class="form-control" id="customKind">
               <option value="html">html</option>
               <option value="text">text</option>
+              <option value="array">array</option>
             </select>
           </div>
           <div class="form-group">
@@ -181,7 +182,7 @@
     <script src="vendors/bootstrap.min.js"></script>
     <link rel="stylesheet" href="vendors/highlight.min.css">
     <script src="vendors/highlight.min.js"></script>
-    <script src="../dist/mipsum.min.js"></script>
+    <script src="../dist/mipsum.js"></script>
 
     <!-- Calls for mIpsum.js -->
     <script type="text/javascript">
@@ -259,7 +260,7 @@
             quotes: olbaDioblaDa,
             mainQuote: beatlesIpsum,
             tagBefore: '<h1>',
-            tagAfter: '</h1>'
+            tagAfter: '</h1>',
           });
           console.log(customIpsum);
           $('#customIpsum').html(customIpsum);
