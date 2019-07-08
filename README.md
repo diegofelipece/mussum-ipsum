@@ -60,9 +60,9 @@ pNum | Number | 1 | Number of paragraphs requested
 quotes | Array | mussumQuotes | Array of quotes to generate paragraphs
 mainQuote | String | mussumMainQuote | Main quote to start your "Lorem Ipsum"
 genLimit | Number | 1000 | Limit of paragraphs that can be requested
-resultType | String | `'html'` | Format of the response, choose between: `'html'` or `'text'`
-tagBefore | String | `'<p>'` | Anything you want to put before each paragraph
-tagAfter | String | `'</p>'` | Anything you want to put after each paragraph
+resultType | String | `'html'` | Format of the response, choose between: `'html'`, `'text'` or `'array'`
+tagBefore | String | `'<p>'` | Anything you want to put before each paragraph (valid only with `'html'` resultType)
+tagAfter | String | `'</p>'` | Anything you want to put after each paragraph (valid only with `'html'` resultType)
 pQuotes | Number | 4 | Number of quotes used to build a paragraph
 
 The options can be set on an object passed as a parameter, like the example below:
