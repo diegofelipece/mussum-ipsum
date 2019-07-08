@@ -28,13 +28,7 @@ const myLoremIpsum = mIpsum({
 })
 ```
 
-You can also use the good old **Bower** or just download the code.
-
-``` bash
-bower install mipsum --save
-```
-
-In this case, you can just add **mipsum.min.js** to your project and add a call via JS.
+You can also just download the code, add **mipsum.min.js** to your project and call it on your JS.
 
 ``` html
 <script src="path/to/mipsum.min.js"></script>

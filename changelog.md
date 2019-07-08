@@ -7,3 +7,6 @@ v2.3.0
 
 v2.3.2
 • Improve module version
+
+v2.4.0
+• Add array option as response type
