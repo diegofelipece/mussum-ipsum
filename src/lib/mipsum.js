@@ -106,5 +106,5 @@ export class MussumIpsum {
   }
 }
 
-export const mIpsum = options => new MussumIpsum(options).init()
+export const mIpsum = (options) => new MussumIpsum(options).init()
 window.mIpsum = mIpsum

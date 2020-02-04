@@ -1,4 +1,7 @@
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+const DEMO_DIR = path.resolve(__dirname, 'demo')
 
 const config = {
   entry: './src/index.js',
@@ -14,17 +17,22 @@ const config = {
         exclude: /node_modules/,
         use: [
           'babel-loader',
-          {
-            loader:'eslint-loader',
-            options: {
-              failOnWarning: false,
-              quiet: true,
-            },
-          }
         ],
       },
     ],
   },
+  devServer: {
+    contentBase: DEMO_DIR,
+    compress: true,
+    port: 8080
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: `${DEMO_DIR}/index.html`,
+      filename: 'index.html',
+      inject: 'head',
+    }),
+  ]
 }
 
 module.exports = config
