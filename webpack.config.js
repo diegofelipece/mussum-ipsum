@@ -15,7 +15,7 @@ const config = {
         use: [
           'babel-loader',
           {
-            loader:'eslint-loader',
+            loader: 'eslint-loader',
             options: {
               failOnWarning: false,
               quiet: true,
