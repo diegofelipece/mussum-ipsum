@@ -1,6 +1,6 @@
 {
   "name": "mipsum",
-  "version": "2.4.1",
+  "version": "2.4.2",
   "description": "A lorem ipsum generator",
   "main": "src/index.js",
   "scripts": {
@@ -23,7 +23,7 @@
     "html-webpack-plugin": "^4.0.2",
     "webpack": "^4.32.2",
     "webpack-cli": "^3.3.2",
-    "webpack-dev-server": "^3.10.2"
+    "webpack-dev-server": "^3.11.0"
   },
   "repository": {
     "type": "git",
