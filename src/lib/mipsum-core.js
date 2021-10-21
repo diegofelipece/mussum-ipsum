@@ -1,6 +1,6 @@
-import {mussumQuotes, mussumMainQuote} from './quotes'
+import { mussumQuotes, mussumMainQuote } from './quotes'
 
-class MussumIpsum {
+export class MussumIpsum {
   constructor(options) {
     this._userOptions = options
     this._defaults = {
@@ -17,30 +17,31 @@ class MussumIpsum {
 
   /* Create ---- > */
   createParagraphs() {
-    const {_options: options} = this
+    const { _options: options } = this
 
     const paragraphs = []
     const limit = Math.floor(options.quotes.length / options.pQuotes)
     const roundsNeeded = Math.ceil(options.pNum / limit)
-
     const tempParagraphs = []
-    for (let i = 0; i < roundsNeeded * limit; i++) {
+    for (let i = 0; i < (roundsNeeded * limit); i++) {
       tempParagraphs.push(this.createOneParagraph())
     }
 
-    tempParagraphs.forEach((paragraph, i) => options.pNum > i && paragraphs.push(paragraph))
+    tempParagraphs.forEach((paragraph, i) => (options.pNum > i) && paragraphs.push(paragraph))
     return paragraphs
   }
 
   createOneParagraph() {
-    const {_options: options} = this
+    const { _options: options } = this
 
     let singleParagraph = ''
     const tempQuotes = [...options.quotes]
     let randomLimit = tempQuotes.length
 
     for (let i = 0; i < options.pQuotes; i++) {
-      const thisPosition = Math.round(Math.random() * (randomLimit - 1) + 1) - 1 // get a random position
+      const thisPosition = (
+        Math.round(Math.random() * (randomLimit - 1) + 1) - 1
+      ) // get a random position
       singleParagraph += `${tempQuotes[thisPosition]}` // append the quote on a temp string
       tempQuotes.splice(thisPosition, 1) // exlude the used value for the array
       randomLimit -= 1 // decrease max getRandomNumber
@@ -51,23 +52,26 @@ class MussumIpsum {
 
   /* Format response ---- > */
   format(recievedParagraphs) {
-    const {_options: options} = this
-    const paragraphs = recievedParagraphs
+    const { _options: options } = this
+    const paragraphs = recievedParagraphs    
 
     // add the initial quote
     paragraphs[0] = `${options.mainQuote} ${paragraphs[0]}`
-
-    return options.resultType === 'array'
+    
+    const final = (options.resultType === 'array')
       ? paragraphs
-      : paragraphs.reduce(
-          (response, paragraph) =>
-            options.resultType === 'html' ? `${options.tagBefore}${paragraph}${options.tagAfter}` : `${paragraph}\n\n`,
-          '',
-        )
+      : paragraphs.reduce((prev, paragraph) => {
+
+        return(options.resultType === 'html')
+          ? `${prev}${options.tagBefore}${paragraph}${options.tagAfter}`
+          : `${prev}${paragraph}\n\n`
+      }, '')
+
+    return final
   }
 
   errorHandler() {
-    const {_options: options} = this
+    const { _options: options } = this
 
     if (options.pNum <= 0 || !options.pNum === '') {
       return 'Is not possible to create 0 paragraphs.'
@@ -87,18 +91,20 @@ class MussumIpsum {
 
   init() {
     /* Define options ---- > */
-    this._options = {...this._defaults}
+    this._options = { ...this._defaults }
 
     if (this._userOptions) {
-      Object.keys(this._userOptions).forEach((option) => {
-        this._options[option] = this._userOptions[option]
-      })
-
+      Object.keys(this._userOptions)
+        .forEach((option) => {
+          this._options[option] = this._userOptions[option]
+        })
+        
       const error = this.errorHandler()
       if (error) throw new Error(error)
     }
 
     const paragraphs = this.createParagraphs()
+
     return this.format(paragraphs)
   }
 }
