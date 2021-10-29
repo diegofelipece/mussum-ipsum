@@ -1,6 +1,6 @@
 import { mussumQuotes, mussumMainQuote } from './quotes'
 
-export class MussumIpsum {
+class MussumIpsum {
   constructor(options) {
     this._userOptions = options
     this._defaults = {
