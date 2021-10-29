@@ -27,12 +27,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://diegofelipece@github.com/diegofelipece/Mussum-Ipsum.git"
+    "url": "git+https://diegofelipece@github.com/diegofelipece/mussum-ipsum.git"
   },
   "author": "Diego Esteves",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/diegofelipece/Mussum-Ipsum/issues"
+    "url": "https://github.com/diegofelipece/mussum-ipsum/issues"
   },
-  "homepage": "https://github.com/diegofelipece/Mussum-Ipsum#readme"
+  "homepage": "https://github.com/diegofelipece/mussum-ipsum#readme"
 }
