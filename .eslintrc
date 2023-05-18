@@ -2,7 +2,9 @@
   "parser": "babel-eslint",
   "env": {
     "browser": true,
-    "es6": true
+    "es6": true,
+    "commonjs": true,
+    "node": true
   },
   "globals": {
     "mocked": true
