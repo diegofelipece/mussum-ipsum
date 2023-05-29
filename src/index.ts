@@ -1,10 +1,11 @@
-import MussumIpsum from './lib/mipsum-core'
-import { mIpsum } from './lib/mipsum'
+import { MussumIpsumOptions } from "./@types/MussumIpsumOptions"
+import { defaultOptions } from "./lib/defaultOptions"
+import MussumIpsum from "./lib/mipsum-core"
 
-// @ts-ignore
-window.mIpsum = mIpsum
-
-export {
-  MussumIpsum,
-  mIpsum,
+export const mIpsum = (options: MussumIpsumOptions) => {
+  const finalOptions: MussumIpsumOptions = {
+    ...defaultOptions,
+    ...options,
+  }
+  return new MussumIpsum(finalOptions).init()
 }

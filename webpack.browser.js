@@ -1,14 +1,14 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-const DEMO_DIR = path.resolve(__dirname, 'demo')
+const DEMO_DIR = path.resolve(__dirname, 'demo/browser')
 
 const config = {
   mode: 'development',
-  entry: './src/index.ts',
+  entry: './dist/mipsum.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'mipsum.js',
+    filename: 'browserDemo.js',
   },
   module: {
     rules: [

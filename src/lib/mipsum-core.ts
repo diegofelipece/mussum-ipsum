@@ -1,11 +1,10 @@
-import { MussumIpsumOptions } from '../../@types/MussumIpsumOptions'
-import { mussumQuotes, mussumMainQuote } from './quotes'
+import { MussumIpsumOptions } from '../@types/MussumIpsumOptions'
 
 class MussumIpsum {
   _options: MussumIpsumOptions = {
     pNum: 1,
-    quotes: mussumQuotes,
-    mainQuote: mussumMainQuote,
+    quotes: [],
+    mainQuote: '',
     genLimit: 1000,
     resultType: 'html',
     tagBefore: '<p>',

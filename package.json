@@ -2,14 +2,22 @@
   "name": "mipsum",
   "version": "2.4.3",
   "description": "A lorem ipsum generator",
-  "main": "src/index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
   "scripts": {
     "clean": "rm dist/bundle.js",
-    "start": "webpack-dev-server --config webpack.config.js",
-    "build": "webpack -p --mode production --config webpack.prod.js",
+    "start": "npm run demo",
+    "demo": "webpack-dev-server --config webpack.modules.js",
+    "demo:browser": "webpack-dev-server --config webpack.browser.js",
+    "build": "webpack --config webpack.build.js",
     "eslint": "eslint ./src/*"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.59.7",
+    "@typescript-eslint/parser": "^5.59.7",
     "eslint": "^6.8.0",
     "eslint-loader": "^3.0.4",
     "eslint-plugin-import": "^2.25.2",

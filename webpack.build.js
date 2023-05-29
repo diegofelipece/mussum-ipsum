@@ -1,10 +1,19 @@
 const path = require('path')
 
 const config = {
-  entry: './src/index.js',
+  mode: 'production',
+  entry: {
+    'index': './src/index.ts',
+    'mipsum.min': './src/window.ts',
+    'mipsum-core': './src/lib/mipsum-core.ts',
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'mipsum.min.js',
+    filename: '[name].js',
+    libraryTarget: 'umd',
+    library: 'MyLib',
+    umdNamedDefine: true
+
   },
   module: {
     rules: [
