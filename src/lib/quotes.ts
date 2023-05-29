@@ -1,7 +1,7 @@
 export const mussumMainQuote = 'Mussum Ipsum, cacilds vidis litro abertis.'
 
 export const mussumQuotes = [
-  'Pra lá , depois divoltis porris, paradis.',
+  'Pra lá, depois divoltis porris, paradis.',
   'Paisis, filhis, espiritis santis.',
   'Mé faiz elementum girarzis, nisi eros vermeio.',
   'Manduma pindureta quium dia nois paga.',
