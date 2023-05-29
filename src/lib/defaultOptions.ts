@@ -1,4 +1,4 @@
-import { MussumIpsumOptions } from '../@types/MussumIpsumOptions'
+import { MussumIpsumOptions } from '../types/MussumIpsumOptions'
 import { mussumMainQuote, mussumQuotes } from './quotes'
 
 export const defaultOptions: MussumIpsumOptions = {

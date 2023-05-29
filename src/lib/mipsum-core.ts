@@ -1,4 +1,4 @@
-import { MussumIpsumOptions } from '../@types/MussumIpsumOptions'
+import { MussumIpsumOptions } from '../types/MussumIpsumOptions'
 
 class MussumIpsum {
   _options: MussumIpsumOptions = {
@@ -10,7 +10,7 @@ class MussumIpsum {
     tagBefore: '<p>',
     tagAfter: '</p>',
     pQuotes: 4,
-  };
+  }
 
   constructor(options: MussumIpsumOptions) {
     if (options) {

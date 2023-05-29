@@ -8,20 +8,17 @@
     "/dist"
   ],
   "scripts": {
-    "clean": "rm dist/bundle.js",
     "start": "npm run demo",
     "demo": "webpack-dev-server --config webpack.modules.js",
     "demo:browser": "webpack-dev-server --config webpack.browser.js",
     "build": "webpack --config webpack.build.js",
-    "eslint": "eslint ./src/*"
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.59.7",
     "@typescript-eslint/parser": "^5.59.7",
-    "eslint": "^6.8.0",
-    "eslint-loader": "^3.0.4",
-    "eslint-plugin-import": "^2.25.2",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint": "^8.41.0",
     "html-webpack-plugin": "^4.5.2",
     "ts-loader": "^9.4.3",
     "typescript": "^5.0.4",

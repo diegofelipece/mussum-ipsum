@@ -44,7 +44,7 @@ const mussumIpsum = mIpsum({ pNum: 10 });
 $('body').append(mussumIpsum);
 ```
 
-There are other customized options available to you. More examples at **demo/index.html**
+There are other customized options available to you. More examples at **demo/**
 
 ### Options
 
