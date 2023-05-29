@@ -7,5 +7,5 @@ export const mIpsum = (options: MussumIpsumOptions) => {
     ...defaultOptions,
     ...options,
   }
-  return new MussumIpsum(finalOptions).init()
+  return new MussumIpsum(finalOptions).run()
 }

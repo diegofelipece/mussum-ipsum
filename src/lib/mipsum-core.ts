@@ -94,7 +94,7 @@ class MussumIpsum {
     return false
   }
 
-  init() {
+  run() {
     const paragraphs = this.createParagraphs()
     return this.format(paragraphs)
   }

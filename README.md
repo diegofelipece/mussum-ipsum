@@ -11,12 +11,6 @@ npm install mipsum --save
 
 ```
 
-**Yarn**:
-
-``` bash
-yarn add mipsum
-```
-
 Since `v2.3.2` it can be also imported as a module. Example:
 
 ``` javascript

@@ -1,4 +1,8 @@
 import { mIpsum } from "."
+import { MussumIpsumOptions } from "./@types/MussumIpsumOptions"
 
-// @ts-ignore
+declare global {
+  interface Window { mIpsum: (options: MussumIpsumOptions) => string | string[]; }
+}
+
 window.mIpsum = mIpsum

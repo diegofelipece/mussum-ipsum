@@ -1,4 +1,5 @@
 import { mIpsum } from '/dist'
+import MussumIpsum from '/dist/mipsum-core'
 
 const myLoremIpsum = mIpsum({
   pNum: 1,
@@ -6,7 +7,6 @@ const myLoremIpsum = mIpsum({
 })
 console.log(myLoremIpsum)
 
-const beatlesIpsum = "Beatles Ipsum, Ob-la-di Ob-la-da."
 const olbaDioblaDa = [
   "Desmond has a barrow in the market place.",
   "Molly is the singer in a band.",
@@ -54,10 +54,10 @@ const olbaDioblaDa = [
   "Take ob-la-di ob-la-da"
 ]
 
-const customIpsum = mIpsum({
+const beatlesIpsum = new MussumIpsum({
   pNum: 10,
   quotes: olbaDioblaDa,
-  mainQuote: beatlesIpsum,
+  mainQuote: "Beatles Ipsum, Ob-la-di Ob-la-da.",
   tagBefore: `
     <article class="message is-primary">
       <div class="message-body">
@@ -68,5 +68,5 @@ const customIpsum = mIpsum({
   `,
 })
 
-document.querySelector('#wrapper').innerHTML = customIpsum
+document.querySelector('#wrapper').innerHTML = beatlesIpsum.run()
 
