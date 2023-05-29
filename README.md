@@ -85,7 +85,9 @@ ___
 
 Fork the repository, fork and clone it on your local folder. Create your `feature/` branch from `develop`.
 
-To start developing, just run `npm install` to install all packages (last time we used Node v13.13.0), and then `npm start` should launch a live demo at your `http://localhost:8080`. 
+To start developing, just run `npm install` to install all packages (last time we used Node v13.13.0), and then you need to run two cmds:
+  - `npm run build` (or `npm run build -- --watch`) that should build 
+  - `npm start` should launch a live demo at your `http://localhost:8080`
 
 ____
 
