@@ -35,5 +35,8 @@
   "bugs": {
     "url": "https://github.com/diegofelipece/mussum-ipsum/issues"
   },
-  "homepage": "https://github.com/diegofelipece/mussum-ipsum#readme"
+  "homepage": "https://github.com/diegofelipece/mussum-ipsum#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
 }
