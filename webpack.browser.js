@@ -5,7 +5,7 @@ const DEMO_DIR = path.resolve(__dirname, 'demo/browser')
 
 const config = {
   mode: 'development',
-  entry: './dist/mipsum.js',
+  entry: './dist/mipsum.min.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'browserDemo.js',

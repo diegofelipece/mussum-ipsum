@@ -12,8 +12,8 @@ const config = {
     filename: '[name].js',
     libraryTarget: 'umd',
     library: 'MyLib',
-    umdNamedDefine: true
-
+    umdNamedDefine: true,
+    globalObject: 'this'
   },
   module: {
     rules: [
